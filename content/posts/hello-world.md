@@ -14,3 +14,19 @@ externalLink = ""
 +++
 # Hello World
 This is a test page
+
+#### Code block with backticks
+
+{{< notice tip >}}
+Remember to write code and not simply copy and paste! 😉
+{{< /notice >}}
+
+```scala
+import scala.util.Random
+
+case class Person(name: String, age: Int) {
+  val greet: String = s"Hi $name :-)"
+}
+val jacob: Person = Person("Jacob", 35)
+jacob.greet
+```
