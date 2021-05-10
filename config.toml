@@ -7,10 +7,10 @@ defaultcontentlanguage = "en"
 paginate = 2000
 
 [params]
-  author = "Jakub Błaszczyk"
+  author = "kuba86"
   info = "Scala Engineer"
-  description = "kuba86's personal website. Scala, Akka, Blog, Developer, Software, Engineer"
-  keywords = "scala,akka,blog,developer,software,engineer"
+  description = "kuba86's personal website. Scala, Blog, Developer, Software, Engineer"
+  keywords = "scala,blog,developer,software,engineer"
   avatarurl = "img/profile.jpg"
   favicon_16 = ""
   favicon_32 = ""
