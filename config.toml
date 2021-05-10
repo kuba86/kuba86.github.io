@@ -15,7 +15,6 @@ paginate = 2000
   favicon_16 = ""
   favicon_32 = ""
   touchicon = ""
-#  footercontent = "Enter a text here."
   since = 2021
   enableTwemoji = false
   colorScheme = "dark"
@@ -26,7 +25,6 @@ paginate = 2000
   tag = "tags"
   author = "authors"
 
-# Social links
 [[params.social]]
   name = "Github"
   icon = "fa fa-github fa-2x"
@@ -43,7 +41,6 @@ paginate = 2000
   weight = 1
   url = "https://kuba86.github.io/index.xml"
 
-# Menu links
 [[menu.main]]
   name = "Blog"
   weight = 1
@@ -52,7 +49,3 @@ paginate = 2000
   name = "Tags"
   weight = 2
   url = "tags/"
-#[[menu.main]]
-#  name = "Series"
-#  weight = 3
-#  url = "series/"
