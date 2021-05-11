@@ -30,3 +30,12 @@ case class Person(name: String, age: Int) {
 val jacob: Person = Person("Jacob", 35)
 jacob.greet
 ```
+{{< highlight scala "style=monokai" >}}
+import scala.util.Random
+
+case class Person(name: String, age: Int) {
+val greet: String = s"Hi $name :-)"
+}
+val jacob: Person = Person("Jacob", 35)
+jacob.greet
+{{< /highlight >}}
