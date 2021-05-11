@@ -3,8 +3,10 @@ title = "kuba86 - Scala Engineer"
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
-
-paginate = 2000
+pygmentsStyle = "monokai"
+pygmentsCodeFences = true
+pygmentsCodeFencesGuessSyntax = true
+paginate = 5000
 
 [params]
   author = "kuba86"
