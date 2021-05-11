@@ -1,5 +1,5 @@
 baseURL = "https://kuba86.com/"
-title = "kuba86 · Scala Engineer"
+title = "kuba86 · Scala Engineer · Blog · Tutorials · How to's"
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
@@ -11,7 +11,7 @@ paginate = 5000
 [params]
   author = "kuba86"
   info = "Scala Engineer"
-  description = "kuba86's personal website about Scala and journey as a software engineer"
+  description = "kuba86's blog, tutorials and how to's about Scala and the journey as a software engineer"
   keywords = "scala,blog,developer,software,engineer,kuba86"
   avatarurl = "img/profile.jpg"
   favicon_16 = "img/favicon_16.png"
