@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/kuba86
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://kuba86.com
+  * I am kuba86 (https://keybase.io/kuba86) on keybase.
+  * I have a public key ASBQSEqvo2Ne9APt9k4oOlwLmO8A0PYXZqQ206ZtufMdjAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010125bf8f7f4b708a26df32c173db29550cc282a76135217460f6b7f6db66589a860a",
+      "host": "keybase.io",
+      "kid": "012050484aafa3635ef403edf64e283a5c0b98ef00d0f61766a436d3a66db9f31d8c0a",
+      "uid": "0f184b487eebccfa32084ff237747b19",
+      "username": "kuba86"
+    },
+    "merkle_root": {
+      "ctime": 1622911100,
+      "hash": "0bbb1f871b167d600477e7bbf4320cd2e346534880fb3c55555f06b58b1f7c45dcfe0adc6b1b203c2fb8fd554e1f222eb756b7b2cf816077deabb804f95af133",
+      "hash_meta": "ce50ea1c67344a8dc7329701778ec5da672af98d599e608782ae8ad22f4009a5",
+      "seqno": 20121298
+    },
+    "service": {
+      "entropy": "jgdC9lU+v6ACPRWxX+ABdk5B",
+      "hostname": "kuba86.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.6.0"
+  },
+  "ctime": 1622911123,
+  "expire_in": 504576000,
+  "prev": "856bb0a633f514c420c7d8822c79a3a46599393a739a1e9258f10af63c9cf9ed",
+  "seqno": 34,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgUEhKr6NjXvQD7fZOKDpcC5jvAND2F2akNtOmbbnzHYwKp3BheWxvYWTESpcCIsQghWuwpjP1FMQgx9iCLHmjpGWZOTpzmh6SWPEK9jyc+e3EIEu46RUYG6+M2oPbAK6zg87f5Kh7zmxecl4mOI2XONohAgHCo3NpZ8RAD4yEpopnybGiPd5c6NeQF2OJ6Z2bY9ZWDFRVoGIqG+UF8bdfj8JzE01U3MLIZfxndQEnn+aO8TL/NawVzMbIDqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIPo96DjZ5ZiTrxc8/EdBHzqglGyRFq+88n98KXWQpspZo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/kuba86
+
+==================================================================
