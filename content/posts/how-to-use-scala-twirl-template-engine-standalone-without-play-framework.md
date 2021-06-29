@@ -1,5 +1,5 @@
 +++
-draft = fasle
+draft = false
 authors = ["kuba86"]
 date = "2021-06-29"
 title = "How to use Scala Twirl template engine standalone, without Play Framework"
