@@ -11,7 +11,7 @@ tags = [
 "play framework",
 ]
 +++
-# Twirl in Scala
+## Twirl in Scala
 Twirl is a type safe template engine based on Scala, and designed for Play Framework. It can also be used standalone, without Play. I will go through some information about Twirl, how to set it up, and use in a standalone Scala application.
 
 Keep in mind:
@@ -20,7 +20,7 @@ Keep in mind:
 1. If you are using Intellij Idea please note that you will see `Cannot resolve symbol` until SBT compiles your templates. You can always run `sbt compile`
 
 ## Setting up SBT project with Twirl and Scala
-#### Add SBT plugin sbt-twirl
+### Add SBT plugin sbt-twirl
 In our project, [add the sbt plugin](https://www.scala-sbt.org/1.x/docs/Using-Plugins.html#Declaring+a+plugin) to `/project/plugins.sbt`:
 ```scala
 addSbtPlugin("com.typesafe.sbt" % "sbt-twirl" % "1.5.1")
