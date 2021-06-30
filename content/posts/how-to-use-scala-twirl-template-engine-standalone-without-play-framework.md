@@ -77,7 +77,7 @@ Lines nine to thirteen, defines our template of Apache httpd configuration. You 
   RewriteRule (.*) "https://%{HTTP_HOST}%{REQUEST_URI}" [R=@{redirectStatusCode},L]
 </VirtualHost>
 ```
-Two cases where we have dynamic content if for ServerName and for status code for redirection. You can write them with just the magic character or surround them with curly brackets. In mustache templates that would be `{{ fullDomain }}` where in Twirl we have `@fullDomain`.
+Two cases where we have dynamic content is for ServerName and for status code for redirection. You can write them with just the magic character or surround them with curly brackets. In mustache templates that would be `{{ fullDomain }}` where in Twirl we have `@fullDomain` or `@{fullDomain}`.
 ## Using Twirl template in Scala code
 Now we are ready to use the template in Scala code. For that, lets create a new Scala file `Generator.scala` in `/src/main/scala` directory. The simplest case would be to print out the result to console. In that case our Generator will look something like this:
 ```scala
