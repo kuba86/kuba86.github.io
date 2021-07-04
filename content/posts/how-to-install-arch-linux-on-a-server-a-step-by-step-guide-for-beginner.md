@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 authors = ["kuba86"]
 date = "2020-06-10"
 images = ["/posts/how-to-install-arch-linux-on-a-server-a-step-by-step-guide-for-beginner.png"]
