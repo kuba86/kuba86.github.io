@@ -54,9 +54,9 @@ In my professional life I am proud and thankful for:
 
 👉 Before you contact me ✍ make sure you read the above information 🚧. You can find there what I do now, and where I see myself in the future. If you write to me about unrelated offers I will most likely not reply. 🤷‍♀️ 🤷‍♂️
 
-Ready? 🏁 📨 👉 [recruiters-from-website@kuba86.com](mailto:recruiters-from-website@kuba86.com)
+Ready? 🏁 you can message me on [LinkedIn](https://www.linkedin.com/in/blaszczykjakub) or, if you prefer email 📨 👉 [recruiters-from-website@kuba86.com](mailto:recruiters-from-website@kuba86.com)
 
 ### For everyone else:
 
-If you would like to contact me about anything else, such as mentoring, help with Scala, CV or Resume, bugs on this website or security issues, don't hesitate to contact me at [hi-from-website@kuba86.com](mailto:hi-from-website@kuba86.com)
+If you would like to contact me about anything else, such as mentoring, help with Scala, CV or Resume, bugs on this website or security issues, don't hesitate to contact me on [LinkedIn](https://www.linkedin.com/in/blaszczykjakub) or, if you prefer email 📨 👉 [hi-from-website@kuba86.com](mailto:hi-from-website@kuba86.com)
 
