@@ -10,8 +10,8 @@ paginate = 5000
 
 [params]
   author = "kuba86"
-  info = "Scala Engineer"
-  description = "kuba86's blog, tutorials and how to's about Scala and the journey as a software engineer"
+  info = "🌈 Scala Engineer 🎉 Functional Programming"
+  description = "kuba86's blog, tutorials and how to's about Scala and the journey as a Scala Engineer"
   keywords = "scala,blog,developer,software,engineer,kuba86"
   avatarurl = "img/profile.jpg"
   favicon_16 = "img/favicon_16.png"
@@ -56,3 +56,7 @@ paginate = 5000
   name = "Tags"
   weight = 2
   url = "tags/"
+[[menu.main]]
+  name = "About"
+  weight = 3
+  url = "about-me/"
