@@ -25,7 +25,7 @@ What is equally important to me, is the people I will be working with. Diverse a
 
 Working in a hybrid office, where people can work from office or home, has worked for me best. Ability to spend time with the team face to face, has improved my performance, and made me feel like I am a part of a team. Perhaps because I have never worked for a company that has figured out how to build a team and lasting relations properly when the whole team is working remotely. If you know a team that is fully remote, and has figured out how to do this properly, [let me know!](#lets-talk-----)
 
-## How did I get where I am now? · ⚡ 🚊
+## How did I get where I am now? · ⚡ 🚀 🚊
 
 I started my software related career as a full stack developer in real estate industry. From the beginning I enjoyed being all over the place, such as working in backend, frontend, setting up servers or doing database work, and so on. I enjoyed working with data, and started to explore Data Governance and Data Management concepts. Because I worked for a great company (JLL), and always had supporting managers, I was able to join Data Governance and Management Team in JLL. Getting to know concepts such as Data Quality, building software to support business users and analyst in their journey to reliable data, was important lesson for me. I learned importance of stakeholder management, working with business users, getting a taste of project management, or understanding the importance of business analyst work, to name a few.
 
