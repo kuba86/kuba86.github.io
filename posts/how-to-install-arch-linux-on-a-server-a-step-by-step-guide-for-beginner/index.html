@@ -1,35 +1,328 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=content-language content="en"><meta name=color-scheme content="light dark"><meta name=author content="kuba86"><meta name=description content="This tutorial will go over step by step how to install Arch Linux on a server. We will not be installing it on a desktop environment so there will be no GUI. There is a lot to do to install and setup the system so be prepared to commit at least five hours to install and do some basic research on topics such as partitioning the drive, or which bootloader to choose."><meta name=keywords content="scala,blog,developer,software,engineer,kuba86"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://kuba86.com/posts/how-to-install-arch-linux-on-a-server-a-step-by-step-guide-for-beginner.png"><meta name=twitter:title content="How to install Arch Linux on a server a step by step guide for beginner’s"><meta name=twitter:description content="This tutorial will go over step by step how to install Arch Linux on a server. We will not be installing it on a desktop environment so there will be no GUI. There is a lot to do to install and setup the system so be prepared to commit at least five hours to install and do some basic research on topics such as partitioning the drive, or which bootloader to choose."><meta property="og:title" content="How to install Arch Linux on a server a step by step guide for beginner’s"><meta property="og:description" content="This tutorial will go over step by step how to install Arch Linux on a server. We will not be installing it on a desktop environment so there will be no GUI. There is a lot to do to install and setup the system so be prepared to commit at least five hours to install and do some basic research on topics such as partitioning the drive, or which bootloader to choose."><meta property="og:type" content="article"><meta property="og:url" content="https://kuba86.com/posts/how-to-install-arch-linux-on-a-server-a-step-by-step-guide-for-beginner/"><meta property="og:image" content="https://kuba86.com/posts/how-to-install-arch-linux-on-a-server-a-step-by-step-guide-for-beginner.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-08-22T00:00:00+00:00"><meta property="article:modified_time" content="2021-08-22T00:00:00+00:00"><title>How to install Arch Linux on a server a step by step guide for beginner’s · kuba86 · Scala Engineer · Blog</title><link rel=canonical href=https://kuba86.com/posts/how-to-install-arch-linux-on-a-server-a-step-by-step-guide-for-beginner/><link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=/css/coder.min.34dfa7b2f5cdeb0f5302b2628f4a7a4bfe88a2431e1397ee4ec605c56ab69701.css integrity="sha256-NN+nsvXN6w9TArJij0p6S/6IokMeE5fuTsYFxWq2lwE=" crossorigin=anonymous media=screen><link rel=stylesheet href=/css/coder-dark.min.d8f89ef09509afb63b9b2595ee174e53cc51ce02a6f6a2179e1621f9389e4340.css integrity="sha256-2Pie8JUJr7Y7myWV7hdOU8xRzgKm9qIXnhYh+TieQ0A=" crossorigin=anonymous media=screen><link rel=icon type=image/png href=/img/favicon_32.png sizes=32x32><link rel=icon type=image/png href=/img/favicon_16.png sizes=16x16><link rel=apple-touch-icon href=/img/touchicon.png><link rel=apple-touch-icon sizes=180x180 href=/img/touchicon.png><meta name=generator content="Hugo 0.83.1"></head><body class="preload-transitions colorscheme-dark"><div class=float-container><a id=dark-mode-toggle class=colorscheme-toggle><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=/>kuba86 · Scala Engineer · Blog</a>
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=content-language content="en">
+<meta name=color-scheme content="light dark">
+<meta name=author content="kuba86">
+<meta name=description content="This tutorial will go over step by step how to install Arch Linux on a server. We will not be installing it on a desktop environment so there will be no GUI. There is a lot to do to install and setup the system so be prepared to commit at least five hours to install and do some basic research on topics such as partitioning the drive, or which bootloader to choose.">
+<meta name=keywords content="scala,blog,developer,software,engineer,kuba86">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://kuba86.com/posts/how-to-install-arch-linux-on-a-server-a-step-by-step-guide-for-beginner.png">
+<meta name=twitter:title content="How to install Arch Linux on a server a step by step guide for beginner’s">
+<meta name=twitter:description content="This tutorial will go over step by step how to install Arch Linux on a server. We will not be installing it on a desktop environment so there will be no GUI. There is a lot to do to install and setup the system so be prepared to commit at least five hours to install and do some basic research on topics such as partitioning the drive, or which bootloader to choose.">
+<meta property="og:title" content="How to install Arch Linux on a server a step by step guide for beginner’s">
+<meta property="og:description" content="This tutorial will go over step by step how to install Arch Linux on a server. We will not be installing it on a desktop environment so there will be no GUI. There is a lot to do to install and setup the system so be prepared to commit at least five hours to install and do some basic research on topics such as partitioning the drive, or which bootloader to choose.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kuba86.com/posts/how-to-install-arch-linux-on-a-server-a-step-by-step-guide-for-beginner/"><meta property="og:image" content="https://kuba86.com/posts/how-to-install-arch-linux-on-a-server-a-step-by-step-guide-for-beginner.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-08-22T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-08-22T00:00:00+00:00">
+<title>
+How to install Arch Linux on a server a step by step guide for beginner’s · kuba86 · Scala Engineer · Blog
+</title>
+<link rel=canonical href=https://kuba86.com/posts/how-to-install-arch-linux-on-a-server-a-step-by-step-guide-for-beginner/>
+<link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin>
+<link rel=stylesheet href=/css/coder.min.34dfa7b2f5cdeb0f5302b2628f4a7a4bfe88a2431e1397ee4ec605c56ab69701.css integrity="sha256-NN+nsvXN6w9TArJij0p6S/6IokMeE5fuTsYFxWq2lwE=" crossorigin=anonymous media=screen>
+<link rel=stylesheet href=/css/coder-dark.min.d8f89ef09509afb63b9b2595ee174e53cc51ce02a6f6a2179e1621f9389e4340.css integrity="sha256-2Pie8JUJr7Y7myWV7hdOU8xRzgKm9qIXnhYh+TieQ0A=" crossorigin=anonymous media=screen>
+<link rel=icon type=image/png href=/img/favicon_32.png sizes=32x32>
+<link rel=icon type=image/png href=/img/favicon_16.png sizes=16x16>
+<link rel=apple-touch-icon href=/img/touchicon.png>
+<link rel=apple-touch-icon sizes=180x180 href=/img/touchicon.png>
+<meta name=generator content="Hugo 0.87.0">
+</head>
+<body class="preload-transitions colorscheme-dark">
+<div class=float-container>
+<a id=dark-mode-toggle class=colorscheme-toggle>
+<i class="fa fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</div>
+<main class=wrapper>
+<nav class=navigation>
+<section class=container>
+<a class=navigation-title href=/>
+kuba86 · Scala Engineer · Blog
+</a>
 <input type=checkbox id=menu-toggle>
-<label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=/tags/>Tags</a></li><li class=navigation-item><a class=navigation-link href=/about-me/>About</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://kuba86.com/posts/how-to-install-arch-linux-on-a-server-a-step-by-step-guide-for-beginner/>How to install Arch Linux on a server a step by step guide for beginner’s</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
-<time datetime=2021-08-22T00:00:00Z>August 22, 2021</time></span>
-<span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
-21-minute read</span></div><div class=authors><i class="fa fa-user" aria-hidden=true></i>
-<a href=/authors/kuba86/>kuba86</a></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
-<span class=tag><a href=/tags/archlinux/>archlinux</a></span>
+<label class="menu-button float-right" for=menu-toggle>
+<i class="fa fa-bars fa-fw" aria-hidden=true></i>
+</label>
+<ul class=navigation-list>
+<li class=navigation-item>
+<a class=navigation-link href=/posts/>Blog</a>
+</li>
+<li class=navigation-item>
+<a class=navigation-link href=/tags/>Tags</a>
+</li>
+<li class=navigation-item>
+<a class=navigation-link href=/about-me/>About</a>
+</li>
+</ul>
+</section>
+</nav>
+<div class=content>
+<section class="container post">
+<article>
+<header>
+<div class=post-title>
+<h1 class=title>
+<a class=title-link href=https://kuba86.com/posts/how-to-install-arch-linux-on-a-server-a-step-by-step-guide-for-beginner/>
+How to install Arch Linux on a server a step by step guide for beginner’s
+</a>
+</h1>
+</div>
+<div class=post-meta>
+<div class=date>
+<span class=posted-on>
+<i class="fa fa-calendar" aria-hidden=true></i>
+<time datetime=2021-08-22T00:00:00Z>
+August 22, 2021
+</time>
+</span>
+<span class=reading-time>
+<i class="fa fa-clock-o" aria-hidden=true></i>
+21-minute read
+</span>
+</div>
+<div class=authors>
+<i class="fa fa-user" aria-hidden=true></i>
+<a href=/authors/kuba86/>kuba86</a></div>
+<div class=tags>
+<i class="fa fa-tag" aria-hidden=true></i>
+<span class=tag>
+<a href=/tags/archlinux/>archlinux</a>
+</span>
 <span class=separator>•</span>
-<span class=tag><a href=/tags/linux/>linux</a></span>
+<span class=tag>
+<a href=/tags/linux/>linux</a>
+</span>
 <span class=separator>•</span>
-<span class=tag><a href=/tags/devops/>DevOps</a></span></div></div></header><div><p>This tutorial will go over step by step how to install Arch Linux on a server. We will not be installing it on a desktop environment so there will be no GUI. There is a lot to do to install and setup the system so be prepared to commit at least five hours to install and do some basic research on topics such as partitioning the drive, or which bootloader to choose.</p><p>Arch Linux is my current distribution of choice, main reason is rolling release and the fact that you need to setup everything yourself. In return for that thankless job, you will gain a lot of knowledge about Linux!</p><p>Previously I used Ubuntu but found that a lot of the packages I used were outdated, and then, Canonical started to push snapd too hard. So I begun to look for something else, and found my new home – Arch Linux.</p><p>#Foolish assumptions</p><ol><li>You have physical access to the server.</li><li>The server is connected to internet.</li><li>You are comfortable with command line.</li><li>Your main goal is to learn something new.</li></ol><p>#Content</p><ol><li><a href=#1-pre-installation-checklist>Pre-installation checklist</a></li><li><a href=#2-booting-into-arch-linux-live-os>Booting into Arch Linux Live OS</a></li><li><a href=#3-arch-linux-live-os-setup>Arch Linux Live OS setup</a></li><li><a href=#4-preparing-storage-for-new-system>Preparing storage for new system</a></li><li><a href=#5-installing-arch-linux-using-pacstrap>Installing Arch Linux using pacstrap</a></li><li><a href=#6-generating-fstab-file>Generating fstab file</a></li><li><a href=#7-using-chroot-to-login-into-new-system>Using chroot to “login” into new system</a></li><li><a href=#8-installing-additional-packages>Installing additional packages</a></li><li><a href=#9-optional-setting-up-git-for-etc>Optional: Setting up git for /etc/</a></li><li><a href=#10-setting-up-nano-editor>Setting up nano editor</a></li><li><a href=#11-installing-bootloader-grub>Installing bootloader (GRUB)</a></li><li><a href=#12-adding-microcode-to-grub-loading-procedure>Adding microcode to GRUB loading procedure</a></li><li><a href=#13-generating-grubcfg-file>Generating grub.cfg file</a></li><li><a href=#14-creating-new-user>Creating new user</a></li><li><a href=#15-booting-into-new-system>Booting into new system</a></li><li><a href=#16-basic-setup>Basic setup</a></li><li><a href=#17-network-setup>Network setup</a></li><li><a href=#18-time-and-date-setup>Time and date setup</a></li><li><a href=#19-localization>Localization</a></li><li><a href=#20-lower-grub-countdown-timer>Lower GRUB countdown timer</a></li><li><a href=#21-setting-up-fish-shell-as-default-shell>Setting up Fish shell as default shell</a></li><li><a href=#22-setting-up-ssh>Setting up SSH</a></li><li><a href=#23-conclusions>Conclusions</a></li></ol><h1 id=1-pre-installation-checklist>1. Pre-Installation checklist
-<a class=heading-link href=#1-pre-installation-checklist><i class="fa fa-link" aria-hidden=true></i></a></h1><p>First things first. In order to install Arch Linux we need to download the ISO file and create a bootable media on USB / CD / DVD.</p><p>Go to <a href=https://www.archlinux.org/>Arch Linux website</a> and at the top right corner you will see download page link.</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/m2tr33vj7ycjq35yu9zq.png alt="screenshot showing link to Arch Linux download page"></p><p>Once on the page you can choose from variety of options such as BitTorrent or HTTP. Once you scroll to HTTP you will see a global section, and below it, a list of countries with list of mirrors.</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/5yre7979ymn8hu4pd9uj.png alt="Arch Linux download page with HTTP direct downloads mirrors"></p><p>Choose the closest one to your location and click on one of the mirrors. Poland is the closest one to me. So I have choosen icm.edu.pl</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/23k3111vo60b0g8b42o0.png alt="Arch Linux Poland mirror icm.edu.pl"></p><p>You should download the current ISO file archlinux-*-x86_64.iso. These files are generated at the beginning of each month. Once the iso file is downloaded, we want to create a bootable media. I recommend <a href=https://www.balena.io/etcher/>balenaEtcher</a>. You can follow their guide how to use it to create bootalbe media.</p><h1 id=2-booting-into-arch-linux-live-os>2. Booting into Arch Linux Live OS
-<a class=heading-link href=#2-booting-into-arch-linux-live-os><i class="fa fa-link" aria-hidden=true></i></a></h1><p>Now that we have bootable media ready, use it to boot the Arch Linux Live OS. It will likely involve inserting bootable media into the server, and restarting the machine. Each manufacturer uses a different key. Sometimes it is F2, F10 or ESC key. If you don’t know which one, just google it “how to boot from USB [manufacturer or model here]” in my case “how to boot from USB Intel NUC” shows <a href=https://www.intel.com/content/www/us/en/support/articles/000005471/intel-nuc.html>article on Intel site</a> where I found that it is F10 key.</p><p>If everything went correctly you should see something similar to this:</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/4hsbou9ideftgbfb0isy.png alt="First screen after successfully booting Arch Linux Live OS"></p><h1 id=3-arch-linux-live-os-setup>3. Arch Linux Live OS setup
-<a class=heading-link href=#3-arch-linux-live-os-setup><i class="fa fa-link" aria-hidden=true></i></a></h1><p>First, we want to check if the internet connection is working. If you have wired connection run <code>ping google.com</code>. To stop pinging use CTRL+C. if you are connected to internet, you should see something similar to this:</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/xpdyizwo40wloclrfw1p.png alt="results of command ping google.com after terminating with CTRL+C"></p><p>If you, on the other hand, need to use WIFI to connect to the internet use <code>iwctl</code> tool. you can run <code>iwctl --help</code> to get more information how to use it. In short, to find out your device name run <code>iwctl device list</code> and once you are ready to connect use <code>iwctl station [device name] connect [network name] [security]</code>. If everything was done correctly, you should be able to <code>ping google.com</code> and see similar output as in the above screenshot.</p><p>Before we continue to set up the storage, we want to sync the clock using <a href=https://en.wikipedia.org/wiki/Network_Time_Protocol>NTP</a>. To do this, we will use <code>timedatectl</code> tool. As always, the first thing you want to do is get familiar with what the tool can do. To do so, run <code>timedatectl --help</code>.</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/s3l5964qiy1p22621vqx.png alt="result of running timedatectl –help commnad"></p><p>To set NTP we want to run <code>timedatectl set-ntp true</code>. To verify that we did it correctly, run <code>timedatectl status</code>. You will see <code>NTP service: active</code>. Now, we are ready to prepare our storage for installing Arch Linux.</p><h1 id=4-preparing-storage-for-new-system>4. Preparing storage for new system
-<a class=heading-link href=#4-preparing-storage-for-new-system><i class="fa fa-link" aria-hidden=true></i></a></h1><p>It should really come as no surprise, we need some persistent storage where we could install Arch Linux. For now, we have only run Arch Linux Live OS in <a href=https://en.wikipedia.org/wiki/Random-access_memory>RAM</a> so everything we setup so far will be gone once we restart the machine. If you refer to the official <a href=https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disks>Arch Linux installation guide</a> you will see that for UEFI with GPT we need to have a minimum of two partitions: EFI and ROOT. SWAP is optional and I recommend you reed <a href=https://wiki.archlinux.org/index.php/Swap>Arch Linux SWAP</a> wiki and decide if you need it or not. When considering SWAP you should take into consideration storage type (SSD, HDD or SD Card), RAM size and of course what you will be running on that machine. I will setup a SWAP partition for completeness, however, you should research the subject on your own.</p><p>In my Intel NUC I have 240GB SSD with Ubuntu installed. Before we install Arch Linux I will show you how to remove all partitions and then setup partition that we need.</p><p>First, lets list available drives on the machine. To do that, we will use <code>fdisk</code> tool. As always, you want to run <code>fdisk --help</code> to see what you can do with a given tool. You should see:</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/v2sictxn390oc0m67o8x.png alt="fdisk –help result"></p><p>Since we want to find out what drives are available to us, let’s run <code>fdisk --list</code></p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/sc7zz66g5jyzlmvfid4t.png alt="fdisk –list result"></p><p>In my case, the results show three drives. <code>/dev/sda</code> – 240GB SSD, <code>/dev/sdb</code> – bootable USB with Arch Linux Live OS, <code>/dev/loop0</code> – you can read more <a href=https://askubuntu.com/questions/906581/what-is-dev-loopx>here</a> about loop devices. To understand naming convention of Linux devices I personally recommend <a href=https://tldp.org/HOWTO/Partition-Mass-Storage-Definitions-Naming-HOWTO/x99.html>this article</a>.</p><p>When you take a look at results of <code>fdisk --help</code>, the usage section shows command to “change partition table” this is exactly what we want! Because we are interested in <code>/dev/sda</code> drive we will run <code>fdisk /dev/sda</code>. The result should look like this:</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/hl35smokcfwudd94jy2n.png alt="entering into change mode with fdisk for /dev/sda device"></p><p>I hope this will come as no surprise, and something you should do every time… Let’s check help by hitting <code>m</code> on the keyboard 😊</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/wn5jggcjnmw5m3cdh996.png alt="result of m command in fdisk"></p><p>First, we will check information about partitions using <code>i</code> command:</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/zpfthutj6zu5lbqqvwcf.png alt="checking info for the disk"></p><p>Since we want to start fresh, we will delete both partitions using <code>d</code> command:</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/qpixja0btb97d97fa28w.png alt="result of command d that deletes partition"></p><p>In the first step we deleted partition 1, in second step there was only one partition left so we did not have to specify it. Command <code>w</code> will save the changes so lets do it!</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/pwsucx3phj5jd0jb029l.png alt="save changes to disk using w command"></p><p>To verify everything went correctly lets run <code>fdisk --list</code></p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/iszf4ng5dnxzgbksc7g1.png alt="verify changes with fdisk &ndash;list"></p><p>Grerat, the <code>/dev/sda</code> drive has no partitions. We can now setup three new one’s.</p><p>EFI – first partition of 512MB, formatted as <code>vfat</code>
+<span class=tag>
+<a href=/tags/devops/>DevOps</a>
+</span></div>
+</div>
+</header>
+<div>
+<p>This tutorial will go over step by step how to install Arch Linux on a server. We will not be installing it on a desktop environment so there will be no GUI. There is a lot to do to install and setup the system so be prepared to commit at least five hours to install and do some basic research on topics such as partitioning the drive, or which bootloader to choose.</p>
+<p>Arch Linux is my current distribution of choice, main reason is rolling release and the fact that you need to setup everything yourself. In return for that thankless job, you will gain a lot of knowledge about Linux!</p>
+<p>Previously I used Ubuntu but found that a lot of the packages I used were outdated, and then, Canonical started to push snapd too hard. So I begun to look for something else, and found my new home – Arch Linux.</p>
+<p>#Foolish assumptions</p>
+<ol>
+<li>You have physical access to the server.</li>
+<li>The server is connected to internet.</li>
+<li>You are comfortable with command line.</li>
+<li>Your main goal is to learn something new.</li>
+</ol>
+<p>#Content</p>
+<ol>
+<li><a href=#1-pre-installation-checklist>Pre-installation checklist</a></li>
+<li><a href=#2-booting-into-arch-linux-live-os>Booting into Arch Linux Live OS</a></li>
+<li><a href=#3-arch-linux-live-os-setup>Arch Linux Live OS setup</a></li>
+<li><a href=#4-preparing-storage-for-new-system>Preparing storage for new system</a></li>
+<li><a href=#5-installing-arch-linux-using-pacstrap>Installing Arch Linux using pacstrap</a></li>
+<li><a href=#6-generating-fstab-file>Generating fstab file</a></li>
+<li><a href=#7-using-chroot-to-login-into-new-system>Using chroot to “login” into new system</a></li>
+<li><a href=#8-installing-additional-packages>Installing additional packages</a></li>
+<li><a href=#9-optional-setting-up-git-for-etc>Optional: Setting up git for /etc/</a></li>
+<li><a href=#10-setting-up-nano-editor>Setting up nano editor</a></li>
+<li><a href=#11-installing-bootloader-grub>Installing bootloader (GRUB)</a></li>
+<li><a href=#12-adding-microcode-to-grub-loading-procedure>Adding microcode to GRUB loading procedure</a></li>
+<li><a href=#13-generating-grubcfg-file>Generating grub.cfg file</a></li>
+<li><a href=#14-creating-new-user>Creating new user</a></li>
+<li><a href=#15-booting-into-new-system>Booting into new system</a></li>
+<li><a href=#16-basic-setup>Basic setup</a></li>
+<li><a href=#17-network-setup>Network setup</a></li>
+<li><a href=#18-time-and-date-setup>Time and date setup</a></li>
+<li><a href=#19-localization>Localization</a></li>
+<li><a href=#20-lower-grub-countdown-timer>Lower GRUB countdown timer</a></li>
+<li><a href=#21-setting-up-fish-shell-as-default-shell>Setting up Fish shell as default shell</a></li>
+<li><a href=#22-setting-up-ssh>Setting up SSH</a></li>
+<li><a href=#23-conclusions>Conclusions</a></li>
+</ol>
+<h1 id=1-pre-installation-checklist>
+1. Pre-Installation checklist
+<a class=heading-link href=#1-pre-installation-checklist>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>First things first. In order to install Arch Linux we need to download the ISO file and create a bootable media on USB / CD / DVD.</p>
+<p>Go to <a href=https://www.archlinux.org/>Arch Linux website</a> and at the top right corner you will see download page link.</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/m2tr33vj7ycjq35yu9zq.png alt="screenshot showing link to Arch Linux download page"></p>
+<p>Once on the page you can choose from variety of options such as BitTorrent or HTTP. Once you scroll to HTTP you will see a global section, and below it, a list of countries with list of mirrors.</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/5yre7979ymn8hu4pd9uj.png alt="Arch Linux download page with HTTP direct downloads mirrors"></p>
+<p>Choose the closest one to your location and click on one of the mirrors. Poland is the closest one to me. So I have choosen icm.edu.pl</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/23k3111vo60b0g8b42o0.png alt="Arch Linux Poland mirror icm.edu.pl"></p>
+<p>You should download the current ISO file archlinux-*-x86_64.iso. These files are generated at the beginning of each month. Once the iso file is downloaded, we want to create a bootable media. I recommend <a href=https://www.balena.io/etcher/>balenaEtcher</a>. You can follow their guide how to use it to create bootalbe media.</p>
+<h1 id=2-booting-into-arch-linux-live-os>
+2. Booting into Arch Linux Live OS
+<a class=heading-link href=#2-booting-into-arch-linux-live-os>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>Now that we have bootable media ready, use it to boot the Arch Linux Live OS. It will likely involve inserting bootable media into the server, and restarting the machine. Each manufacturer uses a different key. Sometimes it is F2, F10 or ESC key. If you don’t know which one, just google it “how to boot from USB [manufacturer or model here]” in my case “how to boot from USB Intel NUC” shows <a href=https://www.intel.com/content/www/us/en/support/articles/000005471/intel-nuc.html>article on Intel site</a> where I found that it is F10 key.</p>
+<p>If everything went correctly you should see something similar to this:</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/4hsbou9ideftgbfb0isy.png alt="First screen after successfully booting Arch Linux Live OS"></p>
+<h1 id=3-arch-linux-live-os-setup>
+3. Arch Linux Live OS setup
+<a class=heading-link href=#3-arch-linux-live-os-setup>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>First, we want to check if the internet connection is working. If you have wired connection run <code>ping google.com</code>. To stop pinging use CTRL+C. if you are connected to internet, you should see something similar to this:</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/xpdyizwo40wloclrfw1p.png alt="results of command ping google.com after terminating with CTRL+C"></p>
+<p>If you, on the other hand, need to use WIFI to connect to the internet use <code>iwctl</code> tool. you can run <code>iwctl --help</code> to get more information how to use it. In short, to find out your device name run <code>iwctl device list</code> and once you are ready to connect use <code>iwctl station [device name] connect [network name] [security]</code>. If everything was done correctly, you should be able to <code>ping google.com</code> and see similar output as in the above screenshot.</p>
+<p>Before we continue to set up the storage, we want to sync the clock using <a href=https://en.wikipedia.org/wiki/Network_Time_Protocol>NTP</a>. To do this, we will use <code>timedatectl</code> tool. As always, the first thing you want to do is get familiar with what the tool can do. To do so, run <code>timedatectl --help</code>.</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/s3l5964qiy1p22621vqx.png alt="result of running timedatectl –help commnad"></p>
+<p>To set NTP we want to run <code>timedatectl set-ntp true</code>. To verify that we did it correctly, run <code>timedatectl status</code>. You will see <code>NTP service: active</code>. Now, we are ready to prepare our storage for installing Arch Linux.</p>
+<h1 id=4-preparing-storage-for-new-system>
+4. Preparing storage for new system
+<a class=heading-link href=#4-preparing-storage-for-new-system>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>It should really come as no surprise, we need some persistent storage where we could install Arch Linux. For now, we have only run Arch Linux Live OS in <a href=https://en.wikipedia.org/wiki/Random-access_memory>RAM</a> so everything we setup so far will be gone once we restart the machine. If you refer to the official <a href=https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disks>Arch Linux installation guide</a> you will see that for UEFI with GPT we need to have a minimum of two partitions: EFI and ROOT. SWAP is optional and I recommend you reed <a href=https://wiki.archlinux.org/index.php/Swap>Arch Linux SWAP</a> wiki and decide if you need it or not. When considering SWAP you should take into consideration storage type (SSD, HDD or SD Card), RAM size and of course what you will be running on that machine. I will setup a SWAP partition for completeness, however, you should research the subject on your own.</p>
+<p>In my Intel NUC I have 240GB SSD with Ubuntu installed. Before we install Arch Linux I will show you how to remove all partitions and then setup partition that we need.</p>
+<p>First, lets list available drives on the machine. To do that, we will use <code>fdisk</code> tool. As always, you want to run <code>fdisk --help</code> to see what you can do with a given tool. You should see:</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/v2sictxn390oc0m67o8x.png alt="fdisk –help result"></p>
+<p>Since we want to find out what drives are available to us, let’s run <code>fdisk --list</code></p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/sc7zz66g5jyzlmvfid4t.png alt="fdisk –list result"></p>
+<p>In my case, the results show three drives. <code>/dev/sda</code> – 240GB SSD, <code>/dev/sdb</code> – bootable USB with Arch Linux Live OS, <code>/dev/loop0</code> – you can read more <a href=https://askubuntu.com/questions/906581/what-is-dev-loopx>here</a> about loop devices. To understand naming convention of Linux devices I personally recommend <a href=https://tldp.org/HOWTO/Partition-Mass-Storage-Definitions-Naming-HOWTO/x99.html>this article</a>.</p>
+<p>When you take a look at results of <code>fdisk --help</code>, the usage section shows command to “change partition table” this is exactly what we want! Because we are interested in <code>/dev/sda</code> drive we will run <code>fdisk /dev/sda</code>. The result should look like this:</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/hl35smokcfwudd94jy2n.png alt="entering into change mode with fdisk for /dev/sda device"></p>
+<p>I hope this will come as no surprise, and something you should do every time… Let’s check help by hitting <code>m</code> on the keyboard 😊</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/wn5jggcjnmw5m3cdh996.png alt="result of m command in fdisk"></p>
+<p>First, we will check information about partitions using <code>i</code> command:</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/zpfthutj6zu5lbqqvwcf.png alt="checking info for the disk"></p>
+<p>Since we want to start fresh, we will delete both partitions using <code>d</code> command:</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/qpixja0btb97d97fa28w.png alt="result of command d that deletes partition"></p>
+<p>In the first step we deleted partition 1, in second step there was only one partition left so we did not have to specify it. Command <code>w</code> will save the changes so lets do it!</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/pwsucx3phj5jd0jb029l.png alt="save changes to disk using w command"></p>
+<p>To verify everything went correctly lets run <code>fdisk --list</code></p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/iszf4ng5dnxzgbksc7g1.png alt="verify changes with fdisk &ndash;list"></p>
+<p>Grerat, the <code>/dev/sda</code> drive has no partitions. We can now setup three new one’s.</p>
+<p>EFI – first partition of 512MB, formatted as <code>vfat</code>
 SWAP – second partition of 4GB, formatted as <code>swap</code>
 ROOT – third partition with remaining storage, formatted as <code>ext4</code>
-Let’s begin!</p><ol><li><code>fdisk /dev/sda</code></li><li><code>m</code> command for help.</li><li><code>g</code> command – we want to create empty GPT partition table.</li><li><code>n</code> command – new EFI partition.</li><li><code>1</code> – partition number.</li><li><code>enter</code> – default value for first sector.</li><li><code>+512M</code> – last sector should be +512M from first sector.</li><li><code>y</code> – since I had Ubuntu installed before, we want to overwrite it.</li><li><code>t</code> – change partition type.</li><li><code>1</code> – EFI system.</li></ol><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/1do27wshtavst8u6waeo.png alt="commands needed to create EFI partition using fdisk tool"></p><p>Now it’s time to create a second partition for SWAP.</p><ol><li><code>n</code> command – new SWAP partition.</li><li><code>2</code> – partition number.</li><li><code>enter</code> – default value for first sector.</li><li><code>+4G</code> – last sector should be +4G from first sector.</li><li><code>y</code> – since I had Ubuntu installed before, we want to overwrite it.</li><li><code>t</code> – change partition type.</li><li><code>19</code> – Linux swap.</li></ol><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/wz868yaagtzezl3enw9s.png alt="commands needed to create SWAP partition using fdisk tool"></p><p>Last, but not least, let’s create third partition for ROOT. We want this partition to be the largest because all our data will go here.</p><ol><li><code>n</code> command – new ROOT partition.</li><li><code>3</code> – partition number.</li><li><code>enter</code> – default value for first sector.</li><li><code>enter</code> – default value for last sector. (remaining disk space)</li><li><code>y</code> – since I had Ubuntu installed before, we want to overwrite it.</li><li><code>t</code> – change partition type.</li><li><code>24</code> – Linux root (x86-64).</li></ol><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/q9i89tqg1rm3wvb2u8p0.png alt="commands needed to create ROOT partition using fdisk tool"></p><p>All the changes so far have been saved to memory only, so if you want to change something you can use <code>q</code> command that will <strong>quit without saving changes</strong>. If on the other hand everything looks good, we can use <code>w</code> command which will <strong>write table to disk and exit</strong>. to verify everything went as planned let’s once again use <code>fdisk --list</code> command.</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/huxec9f6dft19cl3be3n.png alt="verify proper partitions created with fdisk tool"></p><p>Awesome! now we have three new partition <code>/dev/sda1</code> – EFI, <code>/dev/sda2</code> – SWAP and <code>/dev/sda3</code> – ROOT. Next step is to format them with appropriate file system type.</p><p>We will use <code>mkfs</code> tool (MaKeFileSystem) and <code>mkswap</code> tool</p><p>Let’s check help for these tools:
+Let’s begin!</p>
+<ol>
+<li><code>fdisk /dev/sda</code></li>
+<li><code>m</code> command for help.</li>
+<li><code>g</code> command – we want to create empty GPT partition table.</li>
+<li><code>n</code> command – new EFI partition.</li>
+<li><code>1</code> – partition number.</li>
+<li><code>enter</code> – default value for first sector.</li>
+<li><code>+512M</code> – last sector should be +512M from first sector.</li>
+<li><code>y</code> – since I had Ubuntu installed before, we want to overwrite it.</li>
+<li><code>t</code> – change partition type.</li>
+<li><code>1</code> – EFI system.</li>
+</ol>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/1do27wshtavst8u6waeo.png alt="commands needed to create EFI partition using fdisk tool"></p>
+<p>Now it’s time to create a second partition for SWAP.</p>
+<ol>
+<li><code>n</code> command – new SWAP partition.</li>
+<li><code>2</code> – partition number.</li>
+<li><code>enter</code> – default value for first sector.</li>
+<li><code>+4G</code> – last sector should be +4G from first sector.</li>
+<li><code>y</code> – since I had Ubuntu installed before, we want to overwrite it.</li>
+<li><code>t</code> – change partition type.</li>
+<li><code>19</code> – Linux swap.</li>
+</ol>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/wz868yaagtzezl3enw9s.png alt="commands needed to create SWAP partition using fdisk tool"></p>
+<p>Last, but not least, let’s create third partition for ROOT. We want this partition to be the largest because all our data will go here.</p>
+<ol>
+<li><code>n</code> command – new ROOT partition.</li>
+<li><code>3</code> – partition number.</li>
+<li><code>enter</code> – default value for first sector.</li>
+<li><code>enter</code> – default value for last sector. (remaining disk space)</li>
+<li><code>y</code> – since I had Ubuntu installed before, we want to overwrite it.</li>
+<li><code>t</code> – change partition type.</li>
+<li><code>24</code> – Linux root (x86-64).</li>
+</ol>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/q9i89tqg1rm3wvb2u8p0.png alt="commands needed to create ROOT partition using fdisk tool"></p>
+<p>All the changes so far have been saved to memory only, so if you want to change something you can use <code>q</code> command that will <strong>quit without saving changes</strong>. If on the other hand everything looks good, we can use <code>w</code> command which will <strong>write table to disk and exit</strong>. to verify everything went as planned let’s once again use <code>fdisk --list</code> command.</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/huxec9f6dft19cl3be3n.png alt="verify proper partitions created with fdisk tool"></p>
+<p>Awesome! now we have three new partition <code>/dev/sda1</code> – EFI, <code>/dev/sda2</code> – SWAP and <code>/dev/sda3</code> – ROOT. Next step is to format them with appropriate file system type.</p>
+<p>We will use <code>mkfs</code> tool (MaKeFileSystem) and <code>mkswap</code> tool</p>
+<p>Let’s check help for these tools:
 <code>mkfs --help</code>
-<code>mkswap --help</code></p><p>and commands for formatting our three partitions:
+<code>mkswap --help</code></p>
+<p>and commands for formatting our three partitions:
 <code>mkfs.vfat /dev/sda1</code>
 <code>mkswap /dev/sda2</code>
-<code>mkfs.ext4 /dev/sda3</code></p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/9k2wp263x1iw6gbwi8gn.png alt="format partitions with vfat swap and ext4 file system"></p><p>To check we done everything correctly let’s run <code>fdisk --list</code></p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/z4hrobl7e6qhxmucpa62.png alt="verify with fdisk &ndash;list"></p><p>Now that we have prepared our storage we can begin installing Arch Linux.</p><h1 id=5-installing-arch-linux-using-pacstrap>5. Installing Arch Linux using pacstrap
-<a class=heading-link href=#5-installing-arch-linux-using-pacstrap><i class="fa fa-link" aria-hidden=true></i></a></h1><p>Before we install packages to our newly formatted partitions we need to mount them using <code>mount</code> tool before proceeding check <code>mount --help</code>. ROOT partition will be mounted in <code>/mnt</code> and EFI in <code>/mnt/efi</code>.</p><p><code>mount /dev/sda3 /mnt</code>
+<code>mkfs.ext4 /dev/sda3</code></p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/9k2wp263x1iw6gbwi8gn.png alt="format partitions with vfat swap and ext4 file system"></p>
+<p>To check we done everything correctly let’s run <code>fdisk --list</code></p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/z4hrobl7e6qhxmucpa62.png alt="verify with fdisk &ndash;list"></p>
+<p>Now that we have prepared our storage we can begin installing Arch Linux.</p>
+<h1 id=5-installing-arch-linux-using-pacstrap>
+5. Installing Arch Linux using pacstrap
+<a class=heading-link href=#5-installing-arch-linux-using-pacstrap>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>Before we install packages to our newly formatted partitions we need to mount them using <code>mount</code> tool before proceeding check <code>mount --help</code>. ROOT partition will be mounted in <code>/mnt</code> and EFI in <code>/mnt/efi</code>.</p>
+<p><code>mount /dev/sda3 /mnt</code>
 <code>mkdir /mnt/efi</code>
-<code>mount /dev/sda1 /mnt/efi</code></p><p>Once the partitions are mounted, the installation process is quite simple and we will use pacstrap to install all necessary packages. First, lets run <code>pacstrap --help</code></p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/tk59aoevhe8zwwuan3xv.png alt="result of pacstrap &ndash;help"></p><p>Besides “base” group we will add linux and linux-firmware. When we use pacstrap we need to provide path where to install the packages. The final command should be:</p><p><code>pacstrap /mnt base linux linux-firmware</code></p><p>This process will take some time and will depend on your CPU, RAM, SSD/HDD and internet connection speed.</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/wkhvkg6hqkyz99kft9fo.png alt="result of using pacstrap tool"></p><p>Few things should get your attention. Warnings regarding <strong>possible</strong> firmware missing, locale settings and stats of the executed command.</p><p>In my case I don’t need to worry about the first, as this hardware is not present on my machine. With locale settings we will deal later. For stats you will see the process was rather quick on my machine.</p><h1 id=6-generating-fstab-file>6. Generating fstab file
-<a class=heading-link href=#6-generating-fstab-file><i class="fa fa-link" aria-hidden=true></i></a></h1><p>To generate fstab file run <code>genfstab -U /mnt >> /mnt/etc/fstab</code>. To read more I recommend reading the official <a href=https://wiki.archlinux.org/index.php/fstab>Arch Wiki</a>. if you want to check what’s inside you can use <code>nano /mnt/etc/fstab</code></p><h1 id=7-using-chroot-to-login-into-new-system>7. Using chroot to “login” into new system
-<a class=heading-link href=#7-using-chroot-to-login-into-new-system><i class="fa fa-link" aria-hidden=true></i></a></h1><p>Before we actually boot into our system, we can use arch-chroot. To see basic info about this tool execute <code>arch-chroot -h</code></p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/vmh12k0o300n0m5ce0s5.png alt="result of arch-chroot -h"></p><p>In our case we can execute <code>arch-chroot /mnt</code> with default options. It will appear that you are no longer in the Live OS environment but in our newly installed system. Using arch-chroot will use Live OS network configuration so we don’t need to do much configuration to begin.</p><h1 id=8-installing-additional-packages>8. Installing additional packages
-<a class=heading-link href=#8-installing-additional-packages><i class="fa fa-link" aria-hidden=true></i></a></h1><p>In CLI, I prefer to work in fish shell and use nano editor. Because we have left Live OS we can install fish and nano editor. The installation will persist. In Arch Linux, we will use pacman to manage applications. You can think of <code>pacman</code> as <code>apt</code> in Debian or <code>yum</code> in CentOS. By now, you know what will be the first thing we will execute: <code>pacman --help</code></p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/gixj1pbbcwo3gukth3yu.png alt="result of pacman &ndash;help"></p><p>at first we want to sync so let’s check <code>pacman -S --help</code></p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/kp0xj9ocbztv0ixytjse.png alt="result of pacman -S &ndash;help"></p><p>First thing, we want to do is refresh and upgrade installed packages. <code>pacman -Syu</code></p><p>Since we just install all the packages everything should be up to date. To install fish, nano and git we need to specify package names at the end of the command, so now lets execute <code>pacman -Syu fish git nano</code></p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/ugxupubd6or81uqypgkz.png alt="result of pacman -Syu fish git nano"></p><p>There will be additional packages installed. You will be asked to confirm the installation of these packages with Y.</p><h1 id=9-optional-setting-up-git-for-etc>9. Optional: Setting up git for /etc/
-<a class=heading-link href=#9-optional-setting-up-git-for-etc><i class="fa fa-link" aria-hidden=true></i></a></h1><p>I like to setup git repo in /etc/ directory and track changes to the configuration of my machine. It comes very handy when something goes wrong. Of course please DO NOT push this repo to GitHub or other online git site. <a href=https://wiki.archlinux.org/index.php/etckeeper>Arch Linux suggests etckeeper for this purpouse</a>.</p><ol><li>Before we begin lets run <code>fish</code></li><li>Then, <code>cd /etc</code></li><li>configure git by setting up user name, email and default editor.</li><li><code>git config --global user.name "your user name"</code></li><li><code>git config --global user.email "your email"</code></li><li><code>git config --global core.editor "nano -w"</code></li><li><code>git init</code> – to initialize new repo</li><li><code>nano .gitignore</code> – to exclude certain files and directories (list of suggested exclusions at the end of the list)
-to add all the files from the /etc/ directory execute <code>git add .</code></li><li><code>git commit</code> to commit changes. Nano editor will be opened so you can check the files included and provide comment. I added “initial commit”</li><li><code>chmod -R 600 /etc/.git/</code></li></ol><p>.gitignore suggested exclusions:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>/shadow
+<code>mount /dev/sda1 /mnt/efi</code></p>
+<p>Once the partitions are mounted, the installation process is quite simple and we will use pacstrap to install all necessary packages. First, lets run <code>pacstrap --help</code></p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/tk59aoevhe8zwwuan3xv.png alt="result of pacstrap &ndash;help"></p>
+<p>Besides “base” group we will add linux and linux-firmware. When we use pacstrap we need to provide path where to install the packages. The final command should be:</p>
+<p><code>pacstrap /mnt base linux linux-firmware</code></p>
+<p>This process will take some time and will depend on your CPU, RAM, SSD/HDD and internet connection speed.</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/wkhvkg6hqkyz99kft9fo.png alt="result of using pacstrap tool"></p>
+<p>Few things should get your attention. Warnings regarding <strong>possible</strong> firmware missing, locale settings and stats of the executed command.</p>
+<p>In my case I don’t need to worry about the first, as this hardware is not present on my machine. With locale settings we will deal later. For stats you will see the process was rather quick on my machine.</p>
+<h1 id=6-generating-fstab-file>
+6. Generating fstab file
+<a class=heading-link href=#6-generating-fstab-file>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>To generate fstab file run <code>genfstab -U /mnt >> /mnt/etc/fstab</code>. To read more I recommend reading the official <a href=https://wiki.archlinux.org/index.php/fstab>Arch Wiki</a>. if you want to check what’s inside you can use <code>nano /mnt/etc/fstab</code></p>
+<h1 id=7-using-chroot-to-login-into-new-system>
+7. Using chroot to “login” into new system
+<a class=heading-link href=#7-using-chroot-to-login-into-new-system>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>Before we actually boot into our system, we can use arch-chroot. To see basic info about this tool execute <code>arch-chroot -h</code></p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/vmh12k0o300n0m5ce0s5.png alt="result of arch-chroot -h"></p>
+<p>In our case we can execute <code>arch-chroot /mnt</code> with default options. It will appear that you are no longer in the Live OS environment but in our newly installed system. Using arch-chroot will use Live OS network configuration so we don’t need to do much configuration to begin.</p>
+<h1 id=8-installing-additional-packages>
+8. Installing additional packages
+<a class=heading-link href=#8-installing-additional-packages>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>In CLI, I prefer to work in fish shell and use nano editor. Because we have left Live OS we can install fish and nano editor. The installation will persist. In Arch Linux, we will use pacman to manage applications. You can think of <code>pacman</code> as <code>apt</code> in Debian or <code>yum</code> in CentOS. By now, you know what will be the first thing we will execute: <code>pacman --help</code></p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/gixj1pbbcwo3gukth3yu.png alt="result of pacman &ndash;help"></p>
+<p>at first we want to sync so let’s check <code>pacman -S --help</code></p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/kp0xj9ocbztv0ixytjse.png alt="result of pacman -S &ndash;help"></p>
+<p>First thing, we want to do is refresh and upgrade installed packages. <code>pacman -Syu</code></p>
+<p>Since we just install all the packages everything should be up to date. To install fish, nano and git we need to specify package names at the end of the command, so now lets execute <code>pacman -Syu fish git nano</code></p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/ugxupubd6or81uqypgkz.png alt="result of pacman -Syu fish git nano"></p>
+<p>There will be additional packages installed. You will be asked to confirm the installation of these packages with Y.</p>
+<h1 id=9-optional-setting-up-git-for-etc>
+9. Optional: Setting up git for /etc/
+<a class=heading-link href=#9-optional-setting-up-git-for-etc>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>I like to setup git repo in /etc/ directory and track changes to the configuration of my machine. It comes very handy when something goes wrong. Of course please DO NOT push this repo to GitHub or other online git site. <a href=https://wiki.archlinux.org/index.php/etckeeper>Arch Linux suggests etckeeper for this purpouse</a>.</p>
+<ol>
+<li>Before we begin lets run <code>fish</code></li>
+<li>Then, <code>cd /etc</code></li>
+<li>configure git by setting up user name, email and default editor.</li>
+<li><code>git config --global user.name "your user name"</code></li>
+<li><code>git config --global user.email "your email"</code></li>
+<li><code>git config --global core.editor "nano -w"</code></li>
+<li><code>git init</code> – to initialize new repo</li>
+<li><code>nano .gitignore</code> – to exclude certain files and directories (list of suggested exclusions at the end of the list)
+to add all the files from the /etc/ directory execute <code>git add .</code></li>
+<li><code>git commit</code> to commit changes. Nano editor will be opened so you can check the files included and provide comment. I added “initial commit”</li>
+<li><code>chmod -R 600 /etc/.git/</code></li>
+</ol>
+<p>.gitignore suggested exclusions:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>/shadow
 /shadow-
 /.updated
 /ssh/moduli
@@ -40,71 +333,151 @@ to add all the files from the /etc/ directory execute <code>git add .</code></li
 /ld.so.cache
 /docker/key.json
 /pacman.d/gnupg/trustdb.gpg
-</code></pre></div><h1 id=10-setting-up-nano-editor>10. Setting up nano editor
-<a class=heading-link href=#10-setting-up-nano-editor><i class="fa fa-link" aria-hidden=true></i></a></h1><p>To add syntax highlighting in nano we will need to install <code>nano-syntax-highlighting</code> package. Execute <code>pacman -Syu nano-syntax-highlighting</code></p><p>Now, lets edit nano config file <code>nano /etc/nanorc</code></p><p>go to the end of the file and add:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>set tabsize 4
+</code></pre></div><h1 id=10-setting-up-nano-editor>
+10. Setting up nano editor
+<a class=heading-link href=#10-setting-up-nano-editor>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>To add syntax highlighting in nano we will need to install <code>nano-syntax-highlighting</code> package. Execute <code>pacman -Syu nano-syntax-highlighting</code></p>
+<p>Now, lets edit nano config file <code>nano /etc/nanorc</code></p>
+<p>go to the end of the file and add:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>set tabsize 4
 set linenumbers
 set softwrap
 set indicator
 include &#34;/usr/share/nano-syntax-highlighting/*.nanorc&#34;
-</code></pre></div><p>Once you save and exit nano, open the same file again (arrow up on your keyboard) and you will see that the file has syntax highlighting. great!</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/pe7ttf2vpcetuols4w6z.png alt="Nano Editor with syntax highlighting"></p><p>Now that we changed some configuration, we can commit changes if you have chosen to use git.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc
+</code></pre></div><p>Once you save and exit nano, open the same file again (arrow up on your keyboard) and you will see that the file has syntax highlighting. great!</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/pe7ttf2vpcetuols4w6z.png alt="Nano Editor with syntax highlighting"></p>
+<p>Now that we changed some configuration, we can commit changes if you have chosen to use git.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc
 git status
 git diff
 git add .
 git commit
-</code></pre></div><p>and provide comment such as “nano highlighting added and config”</p><h1 id=11-installing-bootloader-grub>11. Installing bootloader (GRUB)
-<a class=heading-link href=#11-installing-bootloader-grub><i class="fa fa-link" aria-hidden=true></i></a></h1><p>So far, we used arch-chroot to ‘login’ into our system. If you try to reboot into our OS it will unfortunately fail because we do not have bootloader installed yet. First, we need to install some packages with
+</code></pre></div><p>and provide comment such as “nano highlighting added and config”</p>
+<h1 id=11-installing-bootloader-grub>
+11. Installing bootloader (GRUB)
+<a class=heading-link href=#11-installing-bootloader-grub>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>So far, we used arch-chroot to ‘login’ into our system. If you try to reboot into our OS it will unfortunately fail because we do not have bootloader installed yet. First, we need to install some packages with
 <code>pacman -Syu grub efibootmgr</code>
 <code>grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB</code>
-To read more about the process I highly recommend <a href=https://wiki.archlinux.org/index.php/Arch_boot_process>Arch Boot Process</a> article.</p><h1 id=12-adding-microcode-to-grub-loading-procedure>12. Adding microcode to GRUB loading procedure
-<a class=heading-link href=#12-adding-microcode-to-grub-loading-procedure><i class="fa fa-link" aria-hidden=true></i></a></h1><p>What is microcode you ask? Arch Linux Wiki is your best friend! Take a look at <a href=https://wiki.archlinux.org/index.php/Microcode>Microcode</a> article to get familiar. Depending on your CPU manufacturer, you will need to install <code>intel-ucode</code> or <code>amd-ucode</code> package. In my case it is Intel so:
-<code>pacman -Syu intel-ucode</code></p><h1 id=13-generating-grubcfg-file>13. Generating grub.cfg file
-<a class=heading-link href=#13-generating-grubcfg-file><i class="fa fa-link" aria-hidden=true></i></a></h1><p>Now that we have grub tools and microcode packages installed we can create grub.cfg file by executing:
-<code>grub-mkconfig -o /boot/grub/grub.cfg</code></p><p>If everything was done correctly, you should see something similar to this:</p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/8ihw2bhrwlt59vioysnr.png alt="result of grub-mkconfig -o /boot/grub/grub.cfg"></p><p>If you installed microcode, make sure it was found and added:
-<code>Found initrd image: /boot/intel-ucode.img</code></p><p>You should take a look into this file with:
+To read more about the process I highly recommend <a href=https://wiki.archlinux.org/index.php/Arch_boot_process>Arch Boot Process</a> article.</p>
+<h1 id=12-adding-microcode-to-grub-loading-procedure>
+12. Adding microcode to GRUB loading procedure
+<a class=heading-link href=#12-adding-microcode-to-grub-loading-procedure>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>What is microcode you ask? Arch Linux Wiki is your best friend! Take a look at <a href=https://wiki.archlinux.org/index.php/Microcode>Microcode</a> article to get familiar. Depending on your CPU manufacturer, you will need to install <code>intel-ucode</code> or <code>amd-ucode</code> package. In my case it is Intel so:
+<code>pacman -Syu intel-ucode</code></p>
+<h1 id=13-generating-grubcfg-file>
+13. Generating grub.cfg file
+<a class=heading-link href=#13-generating-grubcfg-file>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>Now that we have grub tools and microcode packages installed we can create grub.cfg file by executing:
+<code>grub-mkconfig -o /boot/grub/grub.cfg</code></p>
+<p>If everything was done correctly, you should see something similar to this:</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/8ihw2bhrwlt59vioysnr.png alt="result of grub-mkconfig -o /boot/grub/grub.cfg"></p>
+<p>If you installed microcode, make sure it was found and added:
+<code>Found initrd image: /boot/intel-ucode.img</code></p>
+<p>You should take a look into this file with:
 <code>nano /boot/grub/grub.cfg</code>
-You can adjust the boot process to your needs. I, for example, always <a href=#Lower-GRUB-countdown-timer>decrease the countdown</a> for choosing fallback option. Since it is headless server, I much rather have the system be quickly available online after reboot.</p><p>If you opted for git then:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc
+You can adjust the boot process to your needs. I, for example, always <a href=#Lower-GRUB-countdown-timer>decrease the countdown</a> for choosing fallback option. Since it is headless server, I much rather have the system be quickly available online after reboot.</p>
+<p>If you opted for git then:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc
 git status
 git diff
 git add .
 git commit
-</code></pre></div><p>and provide comment such as “grub installed”</p><h1 id=14-creating-new-user>14. Creating new user
-<a class=heading-link href=#14-creating-new-user><i class="fa fa-link" aria-hidden=true></i></a></h1><p>It is a good practice <em>not</em> to use ROOT user. We will create a new one and disable ROOT login to harden our OS. To execute commands with elevated rights we will use sudo. I will add a user ‘kuba’ but you should change it to whatever you want it to be.</p><ol><li><code>pacman -Syu sudo</code></li><li><code>useradd --create-home kuba</code></li><li><code>passwd kuba</code> you will be asked to create a password. Check <code>passwd --help</code> for more info</li><li><code>nano /etc/sudoers</code>
-modify line ‘<code>root ALL=(ALL) ALL</code>‘ and instead of root add newly created user – in my case ‘<code>kuba ALL=(ALL) ALL</code>‘ This allows specified user to run any command as ROOT using <code>sudo</code></li><li><code>passwd --delete root</code> deletes password for user root</li><li><code>passwd --lock root</code> locks the account</li><li><code>nano /etc/passwd</code></li><li>change <code>root:x:0:0::/root:/bin/bash</code> to <code>root:x:0:0::/:/usr/bin/nologin</code> so no one can login with ROOT user directly</li></ol><p>If you opted for git then:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc
+</code></pre></div><p>and provide comment such as “grub installed”</p>
+<h1 id=14-creating-new-user>
+14. Creating new user
+<a class=heading-link href=#14-creating-new-user>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>It is a good practice <em>not</em> to use ROOT user. We will create a new one and disable ROOT login to harden our OS. To execute commands with elevated rights we will use sudo. I will add a user ‘kuba’ but you should change it to whatever you want it to be.</p>
+<ol>
+<li><code>pacman -Syu sudo</code></li>
+<li><code>useradd --create-home kuba</code></li>
+<li><code>passwd kuba</code> you will be asked to create a password. Check <code>passwd --help</code> for more info</li>
+<li><code>nano /etc/sudoers</code>
+modify line ‘<code>root ALL=(ALL) ALL</code>‘ and instead of root add newly created user – in my case ‘<code>kuba ALL=(ALL) ALL</code>‘ This allows specified user to run any command as ROOT using <code>sudo</code></li>
+<li><code>passwd --delete root</code> deletes password for user root</li>
+<li><code>passwd --lock root</code> locks the account</li>
+<li><code>nano /etc/passwd</code></li>
+<li>change <code>root:x:0:0::/root:/bin/bash</code> to <code>root:x:0:0::/:/usr/bin/nologin</code> so no one can login with ROOT user directly</li>
+</ol>
+<p>If you opted for git then:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc
 git status
 git diff
 git add .
 git commit
-</code></pre></div><p>and provide comment such as “added user kuba and disabled root”</p><h1 id=15-booting-into-new-system>15. Booting into new system
-<a class=heading-link href=#15-booting-into-new-system><i class="fa fa-link" aria-hidden=true></i></a></h1><p>Now we are ready to say goodbye to Arch Linux Live OS and boot into our new system. First, we need to exit fish shell so lets execute <code>exit</code>, then exit arch-chroot so <code>exit</code> once again, and now, we are back in Arch Live OS. You can check <code>shutdown --help</code> to find out how to reboot the machine. We can use <code>shutdown -r now</code>.</p><h1 id=16-basic-setup>16. Basic setup
-<a class=heading-link href=#16-basic-setup><i class="fa fa-link" aria-hidden=true></i></a></h1><p>Once your new system boots, you will need to login with user name and password you created. If you opted to use git, lets check for changes to configuration.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc/
+</code></pre></div><p>and provide comment such as “added user kuba and disabled root”</p>
+<h1 id=15-booting-into-new-system>
+15. Booting into new system
+<a class=heading-link href=#15-booting-into-new-system>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>Now we are ready to say goodbye to Arch Linux Live OS and boot into our new system. First, we need to exit fish shell so lets execute <code>exit</code>, then exit arch-chroot so <code>exit</code> once again, and now, we are back in Arch Live OS. You can check <code>shutdown --help</code> to find out how to reboot the machine. We can use <code>shutdown -r now</code>.</p>
+<h1 id=16-basic-setup>
+16. Basic setup
+<a class=heading-link href=#16-basic-setup>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>Once your new system boots, you will need to login with user name and password you created. If you opted to use git, lets check for changes to configuration.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc/
 sudo git status
 sudo git diff
 sudo git add .
 sudo git commit
-</code></pre></div><p>on the last command you will see that git will ask for identity. Previously we used git using ROOT user, now we are using a different one so we need to provide email, name and default editor.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo git config --global user.name &#34;your user name&#34;
+</code></pre></div><p>on the last command you will see that git will ask for identity. Previously we used git using ROOT user, now we are using a different one so we need to provide email, name and default editor.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo git config --global user.name &#34;your user name&#34;
 sudo git config --global user.email &#34;your email&#34;
 sudo git config --global core.editor &#34;nano -w“
-</code></pre></div><p>Now, we can commit changes once again with <code>sudo git commit</code>. Provide comments such as <code>changes after first boot</code></p><h1 id=17-network-setup>17. Network setup
-<a class=heading-link href=#17-network-setup><i class="fa fa-link" aria-hidden=true></i></a></h1><p>If you try to <code>ping google.com</code> you will find that network is not setup. Live OS and arch-chroot use default settings, however, once you install your system it is up to you to setup and make all the decisions.</p><p>First we will use <code>hostnamectl</code> tool and the first thing we will do is check help so lets type:
+</code></pre></div><p>Now, we can commit changes once again with <code>sudo git commit</code>. Provide comments such as <code>changes after first boot</code></p>
+<h1 id=17-network-setup>
+17. Network setup
+<a class=heading-link href=#17-network-setup>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>If you try to <code>ping google.com</code> you will find that network is not setup. Live OS and arch-chroot use default settings, however, once you install your system it is up to you to setup and make all the decisions.</p>
+<p>First we will use <code>hostnamectl</code> tool and the first thing we will do is check help so lets type:
 <code>hostnamectl --help</code>
 <code>hostnamectl status</code> – to check current setup
-<code>sudo hostnamectl set-hostname nuc01</code> – you should change <code>nuc01</code> to whatever you want your hostname to be. Now, when you execute <code>hostnamectl status</code> you should see static hostname updated. To read more about <a href=https://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1>hostnamectl check this man page</a>.</p><p>Second, we need to modify <code>/etc/hosts</code> file. To edit this file we run
+<code>sudo hostnamectl set-hostname nuc01</code> – you should change <code>nuc01</code> to whatever you want your hostname to be. Now, when you execute <code>hostnamectl status</code> you should see static hostname updated. To read more about <a href=https://jlk.fjfi.cvut.cz/arch/manpages/man/hostnamectl.1>hostnamectl check this man page</a>.</p>
+<p>Second, we need to modify <code>/etc/hosts</code> file. To edit this file we run
 <code>sudo nano /etc/hosts</code>
-add:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>127.0.0.1 localhost
+add:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>127.0.0.1 localhost
 ::0 localhost
 127.0.1.1 nuc01.local nuc01
-</code></pre></div><p>To better understand what this file is for <a href=https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5>read this article</a></p><p>Third, to setup network we will use <code>systemd-networkd</code> since it is included in the “base” group we installed using <code>pacstrap</code>. This info can be found in <a href=https://wiki.archlinux.org/index.php/Network_configuration>network_cofiguration article</a> on Arch Wiki. You will also find, that the tool <code>networkctl</code> is default for <code>systemd-networkd</code>. You can <a href=https://jlk.fjfi.cvut.cz/arch/manpages/man/networkctl.1>read more about networkctl here</a>.</p><p>To setup network we will need to know which network device we have on our machine. To check this, we will use <code>ip</code> command. As always, we start with
+</code></pre></div><p>To better understand what this file is for <a href=https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5>read this article</a></p>
+<p>Third, to setup network we will use <code>systemd-networkd</code> since it is included in the “base” group we installed using <code>pacstrap</code>. This info can be found in <a href=https://wiki.archlinux.org/index.php/Network_configuration>network_cofiguration article</a> on Arch Wiki. You will also find, that the tool <code>networkctl</code> is default for <code>systemd-networkd</code>. You can <a href=https://jlk.fjfi.cvut.cz/arch/manpages/man/networkctl.1>read more about networkctl here</a>.</p>
+<p>To setup network we will need to know which network device we have on our machine. To check this, we will use <code>ip</code> command. As always, we start with
 <code>ip --help</code> – I don’t know about you, but this time –help is not that helpful.
 <code>ip link</code> – we are looking for a link object.
 The results should be a list of network interfaces available. In my case it is
 <code>lo</code> – loopback
 <code>enp3s0</code> – wire
-<code>wlp2s0</code> – wireless</p><p>Now, to proceed you should read these two articles:
+<code>wlp2s0</code> – wireless</p>
+<p>Now, to proceed you should read these two articles:
 Arch Wiki – <a href=https://wiki.archlinux.org/index.php/Systemd-networkd>systemd-networkd</a>
 Arch Manual Pages – <a href=https://jlk.fjfi.cvut.cz/arch/manpages/man/networkctl.1>networkctl</a>
 Once you read these, you will note that we need to create a file in <code>/etc/systemd/network</code> where we will add our config file. In my case, I only need one configuration file. I will call it <code>10-wire-wireless.network</code>. if you need more, check articles above to understand how to do so, and in which order they will be loaded.
 <code>sudo nano /etc/systemd/network/10-wire-wireless.network</code>
-For my needs and purposes, the file looks like this:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[Match]
+For my needs and purposes, the file looks like this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[Match]
 Name=enp3s0 wlp2s0
 [Network]
 DHCP=yes
@@ -118,65 +491,109 @@ FallbackDNS=8.8.8.8 8.8.4.4 2001:4860:4860::8888 2001:4860:4860::8844
 UseDNS=no
 </code></pre></div><p>I have decided to have one config file for both network interfaces, use <a href=https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>DHCP</a> for IP assignment, use <a href=https://en.wikipedia.org/wiki/Link-Local_Multicast_Name_Resolution>LLMNR</a>, <a href=https://en.wikipedia.org/wiki/Multicast_DNS>MDNS</a>, <a href=https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions>DNSSEC</a> and <a href=https://en.wikipedia.org/wiki/DNS_over_TLS>DNSOverTLS</a>, and specify my choice of DNS and Fallback DNS. In the <code>[DHCP]</code> section, I specified that I do not want to use DNS advertised by my ISP. That’s why you will see there <code>UseDNS=NO</code>. Of course, you should decide for yourself what you need. All the information on how and what you can do, you will find in these two articles above. Now, similar changes for resolved service:
 <code>sudo nano /etc/systemd/resolved.conf</code>
-I like to setup the <code>resolved.conf</code> file same as the *.network file as I just have a single network.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[Resolve]
+I like to setup the <code>resolved.conf</code> file same as the *.network file as I just have a single network.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[Resolve]
 DNS=1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001
 FallbackDNS=8.8.8.8 8.8.4.4 2001:4860:4860::8888 2001:4860:4860::8844
 LLMNR=yes
 MulticastDNS=yes
 DNSSEC=yes
 DNSOverTLS=yes
-</code></pre></div><p>One important information in the Arch Wiki – <a href=https://wiki.archlinux.org/index.php/Systemd-networkd>systemd-networkd</a> article is that “The <a href=https://wiki.archlinux.org/index.php/Systemd-resolved>systemd-resolved</a> service is required if DNS entries are specified in .network files.” We will need to make sure we enable this service and create symbolic link between <code>/run/systemd/resolve/stub-resolv.conf</code> and <code>/etc/resolv.conf</code></p><p>First, lets create symbolic link
+</code></pre></div><p>One important information in the Arch Wiki – <a href=https://wiki.archlinux.org/index.php/Systemd-networkd>systemd-networkd</a> article is that “The <a href=https://wiki.archlinux.org/index.php/Systemd-resolved>systemd-resolved</a> service is required if DNS entries are specified in .network files.” We will need to make sure we enable this service and create symbolic link between <code>/run/systemd/resolve/stub-resolv.conf</code> and <code>/etc/resolv.conf</code></p>
+<p>First, lets create symbolic link
 <code>sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf</code>
-Now, any application will know to contact <code>127.0.0.53:53</code> for DNS. Then, resolved will contact DNS specified in our *.network files and use DNSSEC and DNS-over-TLS for name resolution. Awesome!</p><p>To enable services in Arch, we will use systemd. To learn more read this <a href=https://wiki.archlinux.org/index.php/Systemd>Arch Wiki systemd</a> article.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>systemctl --help
+Now, any application will know to contact <code>127.0.0.53:53</code> for DNS. Then, resolved will contact DNS specified in our *.network files and use DNSSEC and DNS-over-TLS for name resolution. Awesome!</p>
+<p>To enable services in Arch, we will use systemd. To learn more read this <a href=https://wiki.archlinux.org/index.php/Systemd>Arch Wiki systemd</a> article.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>systemctl --help
 sudo systemctl enable --now systemd-networkd
 sudo systemctl enable --now systemd.resolved
 ping archlinux.org
-</code></pre></div><p>Now, everything should work, so we can do git if you opted in:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc/
+</code></pre></div><p>Now, everything should work, so we can do git if you opted in:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc/
 sudo git status
 sudo git diff
 sudo git add .
 sudo git commit
-</code></pre></div><p>I like to reboot the machine from time to time, so at this point I did <code>shutdown -r now</code>, login back, and enter <code>fish</code></p><h1 id=18-time-and-date-setup>18. Time and date setup
-<a class=heading-link href=#18-time-and-date-setup><i class="fa fa-link" aria-hidden=true></i></a></h1><p>Setting up time should be easy as we already done it once in Arch Live OS.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>timedatectl --help
+</code></pre></div><p>I like to reboot the machine from time to time, so at this point I did <code>shutdown -r now</code>, login back, and enter <code>fish</code></p>
+<h1 id=18-time-and-date-setup>
+18. Time and date setup
+<a class=heading-link href=#18-time-and-date-setup>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>Setting up time should be easy as we already done it once in Arch Live OS.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>timedatectl --help
 timedatectl status
 sudo timedatectl set-ntp true
 sudo timedatectl set-timezone Europe/Warsaw
-</code></pre></div><p>Once done, we can git commit:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc/
+</code></pre></div><p>Once done, we can git commit:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc/
 sudo git diff
 sudo git add .
 sudo git commit
 sudo git commit
-</code></pre></div><h1 id=19-localization>19. Localization
-<a class=heading-link href=#19-localization><i class="fa fa-link" aria-hidden=true></i></a></h1><p>This part is about setting up locale. First we need to edit <code>/etc/locale.gen</code>
+</code></pre></div><h1 id=19-localization>
+19. Localization
+<a class=heading-link href=#19-localization>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>This part is about setting up locale. First we need to edit <code>/etc/locale.gen</code>
 <code>sudo nano /etc/locale.gen</code> – uncomment (remove #) your preferred locale, in my case, I like to stay at plain English so uncomment line 177:
 <code>en_US.UTF-8 UTF-8</code>
 <code>sudo locale-gen</code>
-Then, we can use localectl tool</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>localectl --help
+Then, we can use localectl tool</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>localectl --help
 localectl status
 sudo localectl set-locale LANG=en_US.UTF-8
-</code></pre></div><p>If you opted for git then:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc/
+</code></pre></div><p>If you opted for git then:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc/
 sudo git diff
 sudo git add .
 sudo git commit
-</code></pre></div><h1 id=20-lower-grub-countdown-timer>20. Lower GRUB countdown timer
-<a class=heading-link href=#20-lower-grub-countdown-timer><i class="fa fa-link" aria-hidden=true></i></a></h1><p>When we have monitor connected to the machine we will see boot sequence as well as GRUB menu displayed. The menu has default option that will be executed on every boot, however, it will count down from 5 to give you time to make a decision. This is a great option if you have monitor connected. Once we setup our system, we will probably want to use SSH to connect to it. In that case, the countdown only slows down reboots. In this section, we will change that countdown to 1 second.</p><p><code>sudo nano /boot/grub/grub.cfg</code>
-<code>F6</code> and search for “<code>timeout=</code>” and change <code>5</code> to <code>1</code></p><p>Now, to check it is working correctly, lets execute <code>sudo shutdown -r now</code> and lets watch for the countdown.</p><h1 id=21-setting-up-fish-shell-as-default-shell>21. Setting up Fish shell as default shell
-<a class=heading-link href=#21-setting-up-fish-shell-as-default-shell><i class="fa fa-link" aria-hidden=true></i></a></h1><p>As I stated before, I prefer Fish shell much more that Bash. So next step for me is to make fish be default shell when I login. To do so:</p><p><code>cd ~</code>
+</code></pre></div><h1 id=20-lower-grub-countdown-timer>
+20. Lower GRUB countdown timer
+<a class=heading-link href=#20-lower-grub-countdown-timer>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>When we have monitor connected to the machine we will see boot sequence as well as GRUB menu displayed. The menu has default option that will be executed on every boot, however, it will count down from 5 to give you time to make a decision. This is a great option if you have monitor connected. Once we setup our system, we will probably want to use SSH to connect to it. In that case, the countdown only slows down reboots. In this section, we will change that countdown to 1 second.</p>
+<p><code>sudo nano /boot/grub/grub.cfg</code>
+<code>F6</code> and search for “<code>timeout=</code>” and change <code>5</code> to <code>1</code></p>
+<p>Now, to check it is working correctly, lets execute <code>sudo shutdown -r now</code> and lets watch for the countdown.</p>
+<h1 id=21-setting-up-fish-shell-as-default-shell>
+21. Setting up Fish shell as default shell
+<a class=heading-link href=#21-setting-up-fish-shell-as-default-shell>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>As I stated before, I prefer Fish shell much more that Bash. So next step for me is to make fish be default shell when I login. To do so:</p>
+<p><code>cd ~</code>
 <code>nano .bashrc</code>
-at the end of the file add:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>if [[ $(ps --no-header --pid=$PPID --format=cmd) != &#34;fish&#34; ]]
+at the end of the file add:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>if [[ $(ps --no-header --pid=$PPID --format=cmd) != &#34;fish&#34; ]]
 then
 exec fish
 fi
-</code></pre></div><p>To check it is working, you can restart the machine <code>sudo shutdown -r now</code>. Once you login, you should see default shell as fish.</p><h1 id=22-setting-up-ssh>22. Setting up SSH
-<a class=heading-link href=#22-setting-up-ssh><i class="fa fa-link" aria-hidden=true></i></a></h1><p>Since we will be using this machine headless, we need a way to connect to it from other computers over network. To achieve this, we will use SSH. For this tutorial I will show how to setup OpenSSH. There are other alternatives such as dropbear SSH. First we need to install OpenSSH:
+</code></pre></div><p>To check it is working, you can restart the machine <code>sudo shutdown -r now</code>. Once you login, you should see default shell as fish.</p>
+<h1 id=22-setting-up-ssh>
+22. Setting up SSH
+<a class=heading-link href=#22-setting-up-ssh>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>Since we will be using this machine headless, we need a way to connect to it from other computers over network. To achieve this, we will use SSH. For this tutorial I will show how to setup OpenSSH. There are other alternatives such as dropbear SSH. First we need to install OpenSSH:
 <code>sudo pacman -Syu openssh</code>
-There might be some dependencies or updates listed as well. Hit Y and proceed with installation. If you opted for git let’s commit changes:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc/
+There might be some dependencies or updates listed as well. Hit Y and proceed with installation. If you opted for git let’s commit changes:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc/
 sudo git status
 sudo git add .
 sudo git commit -m &#39;updates and installed OpenSSH&#39;
-</code></pre></div><p>the -m allows you to specify commit message without using nano or other editor</p><p>Now, lets modify configuration for the SSHd:
+</code></pre></div><p>the -m allows you to specify commit message without using nano or other editor</p>
+<p>Now, lets modify configuration for the SSHd:
 <code>sudo nano /etc/ssh/sshd_config</code>
-Go to the end of the file and add:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Protocol 2
+Go to the end of the file and add:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Protocol 2
 Port 55501
 PermitRootLogin no
 PermitEmptyPasswords no
@@ -187,25 +604,53 @@ ChallengeResponseAuthentication no
 HostKeyAlgorithms sk-ssh-ed25519@openssh.com,ssh-ed25519,ssh-rsa
 </code></pre></div><p>First thing to do, is to modify Port. I never use the default 22 port, and I suggest you use something different.
 Second thing to check is AllowUsers. Here I specified only my user name.
-Third thing to check is HostKeyAlgorithms, I only use ed25519 and RSA keys so that what I specified. If you use DSA or ECDSA you might want to add them here. By default OpenSSH will allow any key type to be used.</p><p>To enable sshd service using systemd run:
+Third thing to check is HostKeyAlgorithms, I only use ed25519 and RSA keys so that what I specified. If you use DSA or ECDSA you might want to add them here. By default OpenSSH will allow any key type to be used.</p>
+<p>To enable sshd service using systemd run:
 <code>sudo systemctl enable --now sshd</code>
 To verify we didn’t make typos in the parameters run:
 <code>sudo sshd -t</code>
 To check the status of the service run:
-<code>sudo systemctl status sshd</code></p><p>If you opted for git run:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc/
+<code>sudo systemctl status sshd</code></p>
+<p>If you opted for git run:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>cd /etc/
 sudo git status
 sudo git diff
 sudo git add .
 sudo git commit -m &#39;setup OpenSSH&#39;
-</code></pre></div><p>Because we did not permit to use passwords to login via SSH, we now need to add public key to <code>~/.ssh/authorized_keys</code>. run:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>mkdir ~/.ssh
+</code></pre></div><p>Because we did not permit to use passwords to login via SSH, we now need to add public key to <code>~/.ssh/authorized_keys</code>. run:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>mkdir ~/.ssh
 touch ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 curl https://github.com/kuba86.keys &gt;&gt; ~/.ssh/authorized_keys
-</code></pre></div><p>The last line will import MINE public keys from github. You need to be connected to internet, have github account, and add your public key to github. <strong>You want to replace <code>kuba86</code> with your github username</strong></p><p>Once we added the keys, lets find out IP address of our machine in our local network with <code>networkctl status</code>. Note the IP address, in my case it is <code>192.168.1.59</code>, so to connect via SSH, I need to run:
+</code></pre></div><p>The last line will import MINE public keys from github. You need to be connected to internet, have github account, and add your public key to github. <strong>You want to replace <code>kuba86</code> with your github username</strong></p>
+<p>Once we added the keys, lets find out IP address of our machine in our local network with <code>networkctl status</code>. Note the IP address, in my case it is <code>192.168.1.59</code>, so to connect via SSH, I need to run:
 <code>ssh kuba@192.168.1.59 -p 55501</code>
-<code>ssh [user name]@[IP address] -p [port number]</code></p><p><img src=https://dev-to-uploads.s3.amazonaws.com/i/v0hcsmlrbl9ake2fgalt.png alt="fist login using SSH"></p><h1 id=23-conclusions>23. Conclusions
-<a class=heading-link href=#23-conclusions><i class="fa fa-link" aria-hidden=true></i></a></h1><p>Setting up Arch Linux is not easy, and requires a lot of decision making comparing to Ubuntu or other distributions. In my case, I prefer Arch Linux because I have learned so much just by installing it. I know where to look for if my DNS or network is not working, or what systemd is and how to use it. I hope that by following this tutorial you have learned more about Linux, Arch, git, SSH and where to look if you need help with a tool or a command.</p><p>Since this is my first article ever, there bound to be mistakes and errors. Feel free to contact me or write a comment if you found this tutorial helpful.</p></div><footer></footer></article></section></div><footer class=footer><section class=container>©
+<code>ssh [user name]@[IP address] -p [port number]</code></p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/i/v0hcsmlrbl9ake2fgalt.png alt="fist login using SSH"></p>
+<h1 id=23-conclusions>
+23. Conclusions
+<a class=heading-link href=#23-conclusions>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h1>
+<p>Setting up Arch Linux is not easy, and requires a lot of decision making comparing to Ubuntu or other distributions. In my case, I prefer Arch Linux because I have learned so much just by installing it. I know where to look for if my DNS or network is not working, or what systemd is and how to use it. I hope that by following this tutorial you have learned more about Linux, Arch, git, SSH and where to look if you need help with a tool or a command.</p>
+<p>Since this is my first article ever, there bound to be mistakes and errors. Feel free to contact me or write a comment if you found this tutorial helpful.</p>
+</div>
+<footer>
+</footer>
+</article>
+</section>
+</div>
+<footer class=footer>
+<section class=container>
+©
 2021
 kuba86
 ·
-Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js integrity="sha256-A7F3afT5GuNWZ+HyocqMFvUFYlds+Q/zKzF5kmkU2qU="></script></body></html>
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.
+</section>
+</footer>
+</main>
+<script src=/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js integrity="sha256-A7F3afT5GuNWZ+HyocqMFvUFYlds+Q/zKzF5kmkU2qU="></script>
+</body>
+</html>
