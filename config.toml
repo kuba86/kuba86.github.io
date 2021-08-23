@@ -1,5 +1,5 @@
 baseURL = "https://kuba86.com/"
-title = "kuba86 · Scala Engineer · Blog · Tutorials · How to's"
+title = "kuba86 · Scala Engineer · Blog"
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
