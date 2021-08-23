@@ -30,7 +30,7 @@ Working in a hybrid office, where people can work from office or home, has worke
 
 I started my software related career as a full stack developer in real estate industry. From the beginning I enjoyed being all over the place, such as working in backend, frontend, setting up servers or doing database work, and so on. I enjoyed working with data, and started to explore Data Governance and Data Management concepts. Because I worked for a great company (JLL), and always had supporting managers, I was able to join Data Governance and Management Team in JLL. Getting to know concepts such as Data Quality, building software to support business users and analyst in their journey to reliable data, was important lesson for me. I learned importance of stakeholder management, working with business users, getting a taste of project management, or understanding the importance of business analyst work, to name a few.
 
-After working for seven years in JLL, where I went from a Retail Agency Department Assistant to Scala Full Stack Developer, I decided to move to investment banking industry. I worked in Credit Suisse as a Developer in Data Governance and Management team and later in UBS as a Scala Engineer where, as a team, we build Next Generation Archiving solution.
+After working for seven years in JLL, where I went from a Retail Agency Department Assistant to Scala Full Stack Developer, I decided to move to investment banking industry. I worked in Credit Suisse as a Developer in Data Governance and Management team and later in UBS as a Scala Engineer where, as a team, we built Next Generation Archiving solution.
 
 ## What I am most proud of? · 🦚 🌌 🌈 🚀
 
