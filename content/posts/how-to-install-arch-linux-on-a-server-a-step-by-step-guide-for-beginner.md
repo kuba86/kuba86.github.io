@@ -1,7 +1,7 @@
 +++
 draft = false
 authors = ["kuba86"]
-date = "2020-06-10"
+date = "2021-08-22"
 images = ["/posts/how-to-install-arch-linux-on-a-server-a-step-by-step-guide-for-beginner.png"]
 title = "How to install Arch Linux on a server a step by step guide for beginner’s"
 description = "This tutorial will go over step by step how to install Arch Linux on a server. We will not be installing it on a desktop environment so there will be no GUI. There is a lot to do to install and setup the system so be prepared to commit at least five hours to install and do some basic research on topics such as partitioning the drive, or which bootloader to choose."
