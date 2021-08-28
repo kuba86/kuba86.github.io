@@ -28,7 +28,7 @@ How to install Arch Linux on a server a step by step guide for beginner’s · k
 <link rel=icon type=image/png href=/img/favicon_16.png sizes=16x16>
 <link rel=apple-touch-icon href=/img/touchicon.png>
 <link rel=apple-touch-icon sizes=180x180 href=/img/touchicon.png>
-<script>function isSessionSetSwa(){return sessionStorage.getItem("_swa")===!0}function isReferrerSetSwa(){return document.referrer.indexOf(location.protocol+"//"+location.host)===!0}if(!isSessionSetSwa()&&isReferrerSetSwa()){const a="https://counter.dev/track?",b=new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"kuba86",utcoffset:"2"});fetch(a+b)}sessionStorage.setItem("_swa","1")</script>
+<script>function isSessionSetSwa(){return sessionStorage.getItem("_swa")}function isReferrerDifferentFromCurrentSiteSwa(){return document.referrer.indexOf(location.protocol+"//"+location.host)!==0}if(!isSessionSetSwa()&&isReferrerDifferentFromCurrentSiteSwa()){const a="https://counter.dev/track?",b=new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"kuba86",utcoffset:"2"});fetch(a+b)}sessionStorage.setItem("_swa","1")</script>
 <meta name=generator content="Hugo 0.87.0">
 </head>
 <body class="preload-transitions colorscheme-dark">
