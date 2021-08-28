@@ -10,4 +10,5 @@ swc.cdn.skype.com##._1dBL6mV6xRANqjh_Z8BjN6 > ._1fti_QgAzqGWPGlqh_SvI
 ||facebook.com^$empty
 ||pusher.com^$empty
 ||connect.islay.tech^$empty
+||msn.com^$empty
 ||disqus.com^$empty
