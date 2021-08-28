@@ -48,6 +48,8 @@ paginate = 5000
   icon = "fa fa-rss fa-2x"
   weight = 1
   url = "https://kuba86.github.io/index.xml"
+[params.counterdev]
+  user = "kuba86"
 
 [[menu.main]]
   name = "Blog"
