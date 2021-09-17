@@ -10,6 +10,9 @@ tags = [
 "linux",
 "DevOps",
 ]
+aliases = [
+   "/2020/11/installing-arch-linux-step-by-step-guide-for-beginners/"
+]
 +++
 This tutorial will go over step by step how to install Arch Linux on a server. We will not be installing it on a desktop environment so there will be no GUI. There is a lot to do to install and setup the system so be prepared to commit at least five hours to install and do some basic research on topics such as partitioning the drive, or which bootloader to choose.
 
