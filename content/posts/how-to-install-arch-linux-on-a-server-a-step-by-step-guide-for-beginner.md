@@ -558,6 +558,9 @@ PubkeyAuthentication yes
 AllowUsers kuba
 ChallengeResponseAuthentication no
 HostKeyAlgorithms sk-ssh-ed25519@openssh.com,ssh-ed25519,ssh-rsa
+TCPKeepAlive yes
+ClientAliveInterval 60
+ClientAliveCountMax 604800
 ```
 First thing to do, is to modify Port. I never use the default 22 port, and I suggest you use something different.
 Second thing to check is AllowUsers. Here I specified only my user name.
