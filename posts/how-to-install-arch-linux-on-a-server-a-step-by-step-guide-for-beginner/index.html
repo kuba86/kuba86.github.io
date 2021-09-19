@@ -603,6 +603,9 @@ PubkeyAuthentication yes
 AllowUsers kuba
 ChallengeResponseAuthentication no
 HostKeyAlgorithms sk-ssh-ed25519@openssh.com,ssh-ed25519,ssh-rsa
+TCPKeepAlive yes
+ClientAliveInterval 60
+ClientAliveCountMax 604800
 </code></pre></div><p>First thing to do, is to modify Port. I never use the default 22 port, and I suggest you use something different.
 Second thing to check is AllowUsers. Here I specified only my user name.
 Third thing to check is HostKeyAlgorithms, I only use ed25519 and RSA keys so that what I specified. If you use DSA or ECDSA you might want to add them here. By default OpenSSH will allow any key type to be used.</p>
