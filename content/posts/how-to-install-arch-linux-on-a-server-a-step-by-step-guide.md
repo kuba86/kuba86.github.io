@@ -2,6 +2,7 @@
 draft = false
 authors = ["kuba86"]
 date = "2021-08-22"
+lastmod = "2021-10-27"
 images = ["/posts/how-to-install-arch-linux-on-a-server-a-step-by-step-guide.png"]
 title = "How to install Arch Linux on a server, a step by step guide"
 description = "This tutorial will go over step by step how to install Arch Linux on a server."

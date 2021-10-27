@@ -2,6 +2,7 @@
 draft = false
 authors = ["kuba86"]
 date = "2021-08-22"
+lastmod = "2021-10-27"
 aliases = ["about-us", "about", "contact"]
 images = ["/img/about-me.png"]
 title = "About me"

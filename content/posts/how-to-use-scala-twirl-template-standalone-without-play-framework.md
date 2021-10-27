@@ -2,6 +2,7 @@
 draft = false
 authors = ["kuba86"]
 date = "2021-06-29"
+lastmod = "2021-10-27"
 images = ["/posts/how-to-use-scala-twirl-template-standalone-without-play-framework.png"]
 title = "How to use Scala Twirl template standalone, without Play Framework"
 description = "Twirl is a type safe template engine based on Scala, and designed for Play Framework. It can also be used standalone, without Play."
