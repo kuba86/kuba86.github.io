@@ -2,16 +2,17 @@
 draft = false
 authors = ["kuba86"]
 date = "2021-08-22"
-images = ["/posts/how-to-install-arch-linux-on-a-server-a-step-by-step-guide-for-beginner.png"]
-title = "How to install Arch Linux on a server a step by step guide for beginner’s"
-description = "This tutorial will go over step by step how to install Arch Linux on a server. We will not be installing it on a desktop environment so there will be no GUI. There is a lot to do to install and setup the system so be prepared to commit at least five hours to install and do some basic research on topics such as partitioning the drive, or which bootloader to choose."
+images = ["/posts/how-to-install-arch-linux-on-a-server-a-step-by-step-guide.png"]
+title = "How to install Arch Linux on a server, a step by step guide"
+description = "This tutorial will go over step by step how to install Arch Linux on a server."
 tags = [
 "archlinux",
 "linux",
 "DevOps",
 ]
 aliases = [
-   "/2020/11/installing-arch-linux-step-by-step-guide-for-beginners/"
+   "/2020/11/installing-arch-linux-step-by-step-guide-for-beginners/",
+   "how-to-install-arch-linux-on-a-server-a-step-by-step-guide-for-beginner/"
 ]
 +++
 This tutorial will go over step by step how to install Arch Linux on a server. We will not be installing it on a desktop environment so there will be no GUI. There is a lot to do to install and setup the system so be prepared to commit at least five hours to install and do some basic research on topics such as partitioning the drive, or which bootloader to choose.
@@ -20,13 +21,13 @@ Arch Linux is my current distribution of choice, main reason is rolling release 
 
 Previously I used Ubuntu but found that a lot of the packages I used were outdated, and then, Canonical started to push snapd too hard. So I begun to look for something else, and found my new home – Arch Linux.
 
-#Foolish assumptions
+## Foolish assumptions
 1. You have physical access to the server.
 1. The server is connected to internet.
 1. You are comfortable with command line.
 1. Your main goal is to learn something new.
 
-#Content
+## Content
 1. [Pre-installation checklist](#1-pre-installation-checklist)
 1. [Booting into Arch Linux Live OS](#2-booting-into-arch-linux-live-os)
 1. [Arch Linux Live OS setup](#3-arch-linux-live-os-setup)
@@ -51,7 +52,7 @@ Previously I used Ubuntu but found that a lot of the packages I used were outdat
 1. [Setting up SSH](#22-setting-up-ssh)
 1. [Conclusions](#23-conclusions)
 
-# 1. Pre-Installation checklist
+## 1. Pre-Installation checklist
 First things first. In order to install Arch Linux we need to download the ISO file and create a bootable media on USB / CD / DVD.
 
 Go to [Arch Linux website](https://www.archlinux.org/) and at the top right corner you will see download page link.
@@ -68,14 +69,14 @@ Choose the closest one to your location and click on one of the mirrors. Poland 
 
 You should download the current ISO file archlinux-*-x86_64.iso. These files are generated at the beginning of each month. Once the iso file is downloaded, we want to create a bootable media. I recommend [balenaEtcher](https://www.balena.io/etcher/). You can follow their guide how to use it to create bootalbe media.
 
-# 2. Booting into Arch Linux Live OS
+## 2. Booting into Arch Linux Live OS
 Now that we have bootable media ready, use it to boot the Arch Linux Live OS. It will likely involve inserting bootable media into the server, and restarting the machine. Each manufacturer uses a different key. Sometimes it is F2, F10 or ESC key. If you don’t know which one, just google it “how to boot from USB [manufacturer or model here]” in my case “how to boot from USB Intel NUC” shows [article on Intel site](https://www.intel.com/content/www/us/en/support/articles/000005471/intel-nuc.html) where I found that it is F10 key.
 
 If everything went correctly you should see something similar to this:
 
 ![First screen after successfully booting Arch Linux Live OS](https://dev-to-uploads.s3.amazonaws.com/i/4hsbou9ideftgbfb0isy.png)
 
-# 3. Arch Linux Live OS setup
+## 3. Arch Linux Live OS setup
 First, we want to check if the internet connection is working. If you have wired connection run `ping google.com`. To stop pinging use CTRL+C. if you are connected to internet, you should see something similar to this:
 
 ![results of command ping google.com after terminating with CTRL+C](https://dev-to-uploads.s3.amazonaws.com/i/xpdyizwo40wloclrfw1p.png)
@@ -88,7 +89,7 @@ Before we continue to set up the storage, we want to sync the clock using [NTP](
 
 To set NTP we want to run `timedatectl set-ntp true`. To verify that we did it correctly, run `timedatectl status`. You will see `NTP service: active`. Now, we are ready to prepare our storage for installing Arch Linux.
 
-# 4. Preparing storage for new system
+## 4. Preparing storage for new system
 It should really come as no surprise, we need some persistent storage where we could install Arch Linux. For now, we have only run Arch Linux Live OS in [RAM](https://en.wikipedia.org/wiki/Random-access_memory) so everything we setup so far will be gone once we restart the machine. If you refer to the official [Arch Linux installation guide](https://wiki.archlinux.org/index.php/Installation_guide#Partition_the_disks) you will see that for UEFI with GPT we need to have a minimum of two partitions: EFI and ROOT. SWAP is optional and I recommend you reed [Arch Linux SWAP](https://wiki.archlinux.org/index.php/Swap) wiki and decide if you need it or not. When considering SWAP you should take into consideration storage type (SSD, HDD or SD Card), RAM size and of course what you will be running on that machine. I will setup a SWAP partition for completeness, however, you should research the subject on your own.
 
 In my Intel NUC I have 240GB SSD with Ubuntu installed. Before we install Arch Linux I will show you how to remove all partitions and then setup partition that we need.
@@ -196,7 +197,7 @@ To check we done everything correctly let’s run `fdisk --list`
 
 Now that we have prepared our storage we can begin installing Arch Linux.
 
-# 5. Installing Arch Linux using pacstrap
+## 5. Installing Arch Linux using pacstrap
 Before we install packages to our newly formatted partitions we need to mount them using `mount` tool before proceeding check `mount --help`. ROOT partition will be mounted in `/mnt` and EFI in `/mnt/efi`.
 
 `mount /dev/sda3 /mnt`
@@ -219,17 +220,17 @@ Few things should get your attention. Warnings regarding **possible** firmware m
 
 In my case I don’t need to worry about the first, as this hardware is not present on my machine. With locale settings we will deal later. For stats you will see the process was rather quick on my machine.
 
-# 6. Generating fstab file
+## 6. Generating fstab file
 To generate fstab file run `genfstab -U /mnt >> /mnt/etc/fstab`. To read more I recommend reading the official [Arch Wiki](https://wiki.archlinux.org/index.php/fstab). if you want to check what’s inside you can use `nano /mnt/etc/fstab`
 
-# 7. Using chroot to “login” into new system
+## 7. Using chroot to “login” into new system
 Before we actually boot into our system, we can use arch-chroot. To see basic info about this tool execute `arch-chroot -h`
 
 ![result of arch-chroot -h](https://dev-to-uploads.s3.amazonaws.com/i/vmh12k0o300n0m5ce0s5.png)
 
 In our case we can execute `arch-chroot /mnt` with default options. It will appear that you are no longer in the Live OS environment but in our newly installed system. Using arch-chroot will use Live OS network configuration so we don’t need to do much configuration to begin.
 
-# 8. Installing additional packages
+## 8. Installing additional packages
 In CLI, I prefer to work in fish shell and use nano editor. Because we have left Live OS we can install fish and nano editor. The installation will persist. In Arch Linux, we will use pacman to manage applications. You can think of `pacman` as `apt` in Debian or `yum` in CentOS. By now, you know what will be the first thing we will execute: `pacman --help`
 
 ![result of pacman --help](https://dev-to-uploads.s3.amazonaws.com/i/gixj1pbbcwo3gukth3yu.png)
@@ -246,7 +247,7 @@ Since we just install all the packages everything should be up to date. To insta
 
 There will be additional packages installed. You will be asked to confirm the installation of these packages with Y.
 
-# 9. Optional: Setting up git for /etc/
+## 9. Optional: Setting up git for /etc/
 I like to setup git repo in /etc/ directory and track changes to the configuration of my machine. It comes very handy when something goes wrong. Of course please DO NOT push this repo to GitHub or other online git site. [Arch Linux suggests etckeeper for this purpouse](https://wiki.archlinux.org/index.php/etckeeper).
 
 1. Before we begin lets run `fish`
@@ -277,7 +278,7 @@ I like to setup git repo in /etc/ directory and track changes to the configurati
 /pacman.d/gnupg/trustdb.gpg
 ```
 
-# 10. Setting up nano editor
+## 10. Setting up nano editor
 To add syntax highlighting in nano we will need to install `nano-syntax-highlighting` package. Execute `pacman -Syu nano-syntax-highlighting`
 
 Now, lets edit nano config file `nano /etc/nanorc`
@@ -306,17 +307,17 @@ git commit
 ```
 and provide comment such as “nano highlighting added and config”
 
-# 11. Installing bootloader (GRUB)
+## 11. Installing bootloader (GRUB)
 So far, we used arch-chroot to ‘login’ into our system. If you try to reboot into our OS it will unfortunately fail because we do not have bootloader installed yet. First, we need to install some packages with
 `pacman -Syu grub efibootmgr`
 `grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB`
 To read more about the process I highly recommend [Arch Boot Process](https://wiki.archlinux.org/index.php/Arch_boot_process) article.
 
-# 12. Adding microcode to GRUB loading procedure
+## 12. Adding microcode to GRUB loading procedure
 What is microcode you ask? Arch Linux Wiki is your best friend! Take a look at [Microcode](https://wiki.archlinux.org/index.php/Microcode) article to get familiar. Depending on your CPU manufacturer, you will need to install `intel-ucode` or `amd-ucode` package. In my case it is Intel so:
 `pacman -Syu intel-ucode`
 
-# 13. Generating grub.cfg file
+## 13. Generating grub.cfg file
 Now that we have grub tools and microcode packages installed we can create grub.cfg file by executing:
 `grub-mkconfig -o /boot/grub/grub.cfg`
 
@@ -341,7 +342,7 @@ git commit
 ```
 and provide comment such as “grub installed”
 
-# 14. Creating new user
+## 14. Creating new user
 It is a good practice *not* to use ROOT user. We will create a new one and disable ROOT login to harden our OS. To execute commands with elevated rights we will use sudo. I will add a user ‘kuba’ but you should change it to whatever you want it to be.
 
 1. `pacman -Syu sudo`
@@ -364,10 +365,10 @@ git commit
 ```
 and provide comment such as “added user kuba and disabled root”
 
-# 15. Booting into new system
+## 15. Booting into new system
 Now we are ready to say goodbye to Arch Linux Live OS and boot into our new system. First, we need to exit fish shell so lets execute `exit`, then exit arch-chroot so `exit` once again, and now, we are back in Arch Live OS. You can check `shutdown --help` to find out how to reboot the machine. We can use `shutdown -r now`.
 
-# 16. Basic setup
+## 16. Basic setup
 Once your new system boots, you will need to login with user name and password you created. If you opted to use git, lets check for changes to configuration.
 ```
 cd /etc/
@@ -384,7 +385,7 @@ sudo git config --global core.editor "nano -w“
 ```
 Now, we can commit changes once again with `sudo git commit`. Provide comments such as `changes after first boot`
 
-# 17. Network setup
+## 17. Network setup
 If you try to `ping google.com` you will find that network is not setup. Live OS and arch-chroot use default settings, however, once you install your system it is up to you to setup and make all the decisions.
 
 First we will use `hostnamectl` tool and the first thing we will do is check help so lets type:
@@ -472,7 +473,7 @@ sudo git commit
 
 I like to reboot the machine from time to time, so at this point I did `shutdown -r now`, login back, and enter `fish`
 
-# 18. Time and date setup
+## 18. Time and date setup
 Setting up time should be easy as we already done it once in Arch Live OS.
 ```
 timedatectl --help
@@ -491,7 +492,7 @@ sudo git commit
 sudo git commit
 ```
 
-# 19. Localization
+## 19. Localization
 This part is about setting up locale. First we need to edit `/etc/locale.gen`
 `sudo nano /etc/locale.gen` – uncomment (remove #) your preferred locale, in my case, I like to stay at plain English so uncomment line 177:
 `en_US.UTF-8 UTF-8`
@@ -511,7 +512,7 @@ sudo git add .
 sudo git commit
 ```
 
-# 20. Lower GRUB countdown timer
+## 20. Lower GRUB countdown timer
 When we have monitor connected to the machine we will see boot sequence as well as GRUB menu displayed. The menu has default option that will be executed on every boot, however, it will count down from 5 to give you time to make a decision. This is a great option if you have monitor connected. Once we setup our system, we will probably want to use SSH to connect to it. In that case, the countdown only slows down reboots. In this section, we will change that countdown to 1 second.
 
 `sudo nano /boot/grub/grub.cfg`
@@ -519,7 +520,7 @@ When we have monitor connected to the machine we will see boot sequence as well 
 
 Now, to check it is working correctly, lets execute `sudo shutdown -r now` and lets watch for the countdown.
 
-# 21. Setting up Fish shell as default shell
+## 21. Setting up Fish shell as default shell
 As I stated before, I prefer Fish shell much more that Bash. So next step for me is to make fish be default shell when I login. To do so:
 
 `cd ~`
@@ -533,7 +534,7 @@ fi
 ```
 To check it is working, you can restart the machine `sudo shutdown -r now`. Once you login, you should see default shell as fish.
 
-# 22. Setting up SSH
+## 22. Setting up SSH
 Since we will be using this machine headless, we need a way to connect to it from other computers over network. To achieve this, we will use SSH. For this tutorial I will show how to setup OpenSSH. There are other alternatives such as dropbear SSH. First we need to install OpenSSH:
 `sudo pacman -Syu openssh`
 There might be some dependencies or updates listed as well. Hit Y and proceed with installation. If you opted for git let’s commit changes:
@@ -596,7 +597,7 @@ Once we added the keys, lets find out IP address of our machine in our local net
 
 ![fist login using SSH](https://dev-to-uploads.s3.amazonaws.com/i/v0hcsmlrbl9ake2fgalt.png)
 
-# 23. Conclusions
+## 23. Conclusions
 Setting up Arch Linux is not easy, and requires a lot of decision making comparing to Ubuntu or other distributions. In my case, I prefer Arch Linux because I have learned so much just by installing it. I know where to look for if my DNS or network is not working, or what systemd is and how to use it. I hope that by following this tutorial you have learned more about Linux, Arch, git, SSH and where to look if you need help with a tool or a command.
 
 Since this is my first article ever, there bound to be mistakes and errors. Feel free to contact me or write a comment if you found this tutorial helpful.

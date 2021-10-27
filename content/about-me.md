@@ -5,6 +5,7 @@ date = "2021-08-22"
 aliases = ["about-us", "about", "contact"]
 images = ["/img/about-me.png"]
 title = "About me"
+description = "Hi, my name is Jakub Blaszczyk (he/him)"
 +++
 ## Who am I? · 👨‍💻 🌈
 
