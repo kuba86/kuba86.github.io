@@ -54,6 +54,8 @@ In my professional life I am proud and thankful for:
 
 ### For recruiters:
 
+{{< iframe url="https://cdn.forms-content.sg-form.com/f7f38983-9be1-11ec-8e4b-b6f73875699f" >}}
+
 👉 Before you contact me ✍ make sure you read the above information 🚧. You can find there what I do now, and where I see myself in the future. If you write to me about unrelated offers I will most likely not reply. 🤷‍♀️ 🤷‍♂️
 
 Ready? 🏁 you can message me on [LinkedIn](https://www.linkedin.com/in/blaszczykjakub) or if you prefer email 📨 👉 [recruiters-from-website@kuba86.com](mailto:recruiters-from-website@kuba86.com)
