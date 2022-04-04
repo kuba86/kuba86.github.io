@@ -5,7 +5,6 @@
 /facebook./
 /facebook-/
 /whatsapp./
-||fb.com^
 /fbsbx./
 /fbcdn./
 /fbcdn-/
