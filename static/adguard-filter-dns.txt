@@ -5,7 +5,6 @@
 /facebook./
 /facebook-/
 /whatsapp./
-/fb./
 /fbsbx./
 /fbcdn./
 /fbcdn-/
@@ -14,3 +13,6 @@
 /actionbutton./
 ||online-metrix.com^
 ||online-metrix.net^
+||.ru^
+||fb.com^
+||fb.net^
