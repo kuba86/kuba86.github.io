@@ -24,6 +24,10 @@
 ||bing.com^
 ||bing.net^
 ||.ru^
+||baidu.com^
+||yandex.ru^
+||alidns.com^
+||disqus.com^
 /gemius./
 /sessions.bugsnag./
 /actionbutton./
