@@ -1,0 +1,84 @@
+baseURL = "https://kuba86.com/"
+title = "kuba86 · Scala Engineer · Blog"
+theme = "hugo-coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
+pygmentsStyle = "monokai"
+pygmentsCodeFences = true
+pygmentsCodeFencesGuessSyntax = true
+paginate = 5000
+
+[params]
+  author = "kuba86"
+  info = "🌈 Scala Engineer 🎉 Functional Programming"
+  images = ["/img/kuba86.png"]
+  description = "kuba86's blog, tutorials and how to's about Scala and the journey as a Data Engineer"
+  keywords = "scala,blog,developer,software,engineer,data,kuba86"
+  avatarurl = "img/profile.jpg"
+  favicon_16 = "img/favicon_16.png"
+  favicon_32 = "img/favicon_32.png"
+  touchicon = "img/touchicon.png"
+  since = 2021
+  enableTwemoji = false
+  colorScheme = "dark"
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+[[params.social]]
+  name = "Github"
+  icon = "fa fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/kuba86/"
+[[params.social]]
+  name = "LinkedIn"
+  icon = "fa fa-linkedin fa-2x"
+  weight = 1
+  url = "https://www.linkedin.com/in/blaszczykjakub/"
+[[params.social]]
+  name = "dev.to"
+  icon = "fa fa-dev-to fa-2x"
+  weight = 1
+  url = "https://dev.to/kuba86"
+[[params.social]]
+  name = "RSS"
+  icon = "fa fa-rss fa-2x"
+  weight = 1
+  url = "https://kuba86.github.io/index.xml"
+
+[params.counterdev]
+  user = "kuba86"
+
+[params.cloudflare]
+  token = "ab821c2c2ce94446ac9a6f1e4052f9d4"
+
+[[menu.main]]
+  name = "Blog"
+  weight = 1
+  url  = "posts/"
+[[menu.main]]
+  name = "Tags"
+  weight = 2
+  url = "tags/"
+[[menu.main]]
+  name = "About"
+  weight = 3
+  url = "about-me/"
+
+[params.giscus]
+  repo="kuba86/kuba86.github.io"
+  repoID="R_kgDOJ2B7PQ"
+  category="Q&A"
+  categoryID="DIC_kwDOJ2B7Pc4CXlML"
+  mapping="url"
+  strict="1"
+  reactionsEnabled="1"
+  emitMetadata="0"
+  inputPosition="top"
+  theme="noborder_dark"
+  lang="en"
+  loading="lazy"
+  crossorigin="anonymous"

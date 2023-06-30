@@ -1,0 +1,15 @@
+allaboutscala.com#$#div .fl-col {width: 100% !important;}
+moje.innogy.pl###webchat
+www.certum.pl###cc-banner-wrap
+outlook.live.com##._1dBL6mV6xRANqjh_Z8BjN6 > ._1fti_QgAzqGWPGlqh_FSvI > ._3tjF5ZQ8Fk8ph0Daxu_xpZ
+a.lw.skype.com##._1dBL6mV6xRANqjh_Z8BjN6 > ._1fti_QgAzqGWPGlqh_FSvI > ._3tjF5ZQ8Fk8ph0Daxu_xpZ
+swc.cdn.skype.com##._1dBL6mV6xRANqjh_Z8BjN6 > ._1fti_QgAzqGWPGlqh_FSvI > ._3tjF5ZQ8Fk8ph0Daxu_xpZ
+outlook.live.com##._1dBL6mV6xRANqjh_Z8BjN6 > ._1fti_QgAzqGWPGlqh_FSvI
+a.lw.skype.com##._1dBL6mV6xRANqjh_Z8BjN6 > ._1fti_QgAzqGWPGlqh_FSvI
+swc.cdn.skype.com##._1dBL6mV6xRANqjh_Z8BjN6 > ._1fti_QgAzqGWPGlqh_SvI
+||facebook.com^$empty,important
+||pusher.com^$empty,important
+||connect.islay.tech^$empty,important
+||msn.com^$empty,important
+||disqus.com^$empty,important
+||bing.com^$empty,important
