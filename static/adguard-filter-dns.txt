@@ -31,3 +31,4 @@
 /gemius./
 /sessions.bugsnag./
 /actionbutton./
+||devlooped.com^
