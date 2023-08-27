@@ -13,3 +13,8 @@ swc.cdn.skype.com##._1dBL6mV6xRANqjh_Z8BjN6 > ._1fti_QgAzqGWPGlqh_SvI
 ||msn.com^$empty,important
 ||disqus.com^$empty,important
 ||bing.com^$empty,important
+@@||talk.brave.com^
+1.1.1.1$network
+1.0.0.1$network
+8.8.8.8$network
+8.8.4.4$network
