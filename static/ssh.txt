@@ -1,3 +1,4 @@
+sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIPJjYgWHLYTyCxbk/lmMghazz3f7cNqsqAfnPvj7cnpSAAAABHNzaDo= kuba86-yubikey-usb-c
 sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIO8R7jpekGg/fkoLJqLDz8kEA83+ptH/Lrmw95+Q7iSkAAAABHNzaDo= kuba86-2021-07-01-Somu-Black
 sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIFggQoUlOh/foOyZUbm0o6Edg4gqm5O3KD51/rnMls/7AAAABHNzaDo= kuba86-2021-07-01-Solo-Black
 sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAILSnmpCrdpBCqO59EcZSr9q/7uwEPJR2nwMvVYi/K1l4AAAABHNzaDo= kuba86-2021-07-01-Solo-Red
