@@ -7,6 +7,8 @@ swc.cdn.skype.com##._1dBL6mV6xRANqjh_Z8BjN6 > ._1fti_QgAzqGWPGlqh_FSvI > ._3tjF5
 outlook.live.com##._1dBL6mV6xRANqjh_Z8BjN6 > ._1fti_QgAzqGWPGlqh_FSvI
 a.lw.skype.com##._1dBL6mV6xRANqjh_Z8BjN6 > ._1fti_QgAzqGWPGlqh_FSvI
 swc.cdn.skype.com##._1dBL6mV6xRANqjh_Z8BjN6 > ._1fti_QgAzqGWPGlqh_SvI
+temu.com###bg-simple-portal-container
+metroretro.io###help > div.sc-kYrlTI.hxRSCd > div > div.sc-kYrlTI.jmwEwj > div.sc-kYrlTI.dJCQqc > div.sc-kfvAZH.kiihbU
 ||facebook.com^$empty,important
 ||pusher.com^$empty,important
 ||connect.islay.tech^$empty,important
