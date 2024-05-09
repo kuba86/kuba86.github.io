@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /?ref=https://codemonkey.link
+Disallow: /?ref=https://githubhelp.com
