@@ -67,3 +67,19 @@ paginate = 5000
   name = "About"
   weight = 3
   url = "about-me/"
+
+[params.giscus]
+  repo="kuba86/kuba86.github.io"
+  repoID="R_kgDOJ2B7PQ"
+  category="Q&A"
+  categoryID="DIC_kwDOJ2B7Pc4CXlML"
+  mapping="url"
+  strict="1"
+  reactionsEnabled="1"
+  emitMetadata="0"
+  inputPosition="top"
+  theme="noborder_dark"
+  lang="en"
+  loading="lazy"
+  crossorigin="anonymous"
+  
