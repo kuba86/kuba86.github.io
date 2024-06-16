@@ -13,7 +13,7 @@ paginate = 5000
   info = "🌈 Scala Engineer 🎉 Functional Programming"
   images = ["/img/kuba86.png"]
   description = "kuba86's blog, tutorials and how to's about Scala and the journey as a Data Engineer"
-  keywords = "scala,blog,developer,software,engineer,data,kuba86"
+  keywords = "scala,blog,engineer,data,kuba86,developer,software"
   avatarurl = "img/profile.jpg"
   favicon_16 = "img/favicon_16.png"
   favicon_32 = "img/favicon_32.png"
@@ -38,11 +38,6 @@ paginate = 5000
   icon = "fa fa-linkedin fa-2x"
   weight = 1
   url = "https://www.linkedin.com/in/blaszczykjakub/"
-[[params.social]]
-  name = "dev.to"
-  icon = "fa fa-dev-to fa-2x"
-  weight = 1
-  url = "https://dev.to/kuba86"
 [[params.social]]
   name = "RSS"
   icon = "fa fa-rss fa-2x"
@@ -82,4 +77,3 @@ paginate = 5000
   lang="en"
   loading="lazy"
   crossorigin="anonymous"
-  
