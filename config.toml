@@ -6,7 +6,7 @@ defaultcontentlanguage = "en"
 pygmentsStyle = "monokai"
 pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
-paginate = 5000
+pagination.pagerSize = 5000
 
 [params]
   author = "kuba86"
