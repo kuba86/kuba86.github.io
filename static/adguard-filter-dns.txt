@@ -84,3 +84,4 @@
 ||sentry.io^
 ||librus.pl^
 ||gator.volces.com^
+||rayjump.com^
