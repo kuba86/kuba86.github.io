@@ -85,3 +85,6 @@
 ||librus.pl^
 ||gator.volces.com^
 ||rayjump.com^
+||aitd.one^
+||extrahefty.com^
+||freevpn.one^
