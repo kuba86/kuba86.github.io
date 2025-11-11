@@ -8,9 +8,12 @@ temu.com##svg[tabindex="0"][role="button"][aria-label="Cart"]:upward(5)
 temu.com##div[id^="FloatSupport"][class^="supportWrapper-"]
 
 ! Gemini AI wide view
-gemini.google.com##user-query.ng-star-inserted:style(max-width: 100% !important)
-gemini.google.com##div.input-area-container.ng-trigger.ng-trigger-inputAreaAnimation.ng-star-inserted:style(max-width: 100% !important)
-gemini.google.com##div.conversation-container.message-actions-hover-boundary.ng-star-inserted:style(max-width: 100% !important)
+gemini.google.com##user-query.ng-star-inserted:style(max-width: 90% !important)
+gemini.google.com##div.input-area-container.ng-trigger.ng-trigger-inputAreaAnimation.ng-star-inserted:style(max-width: 90% !important)
+gemini.google.com##div.conversation-container.message-actions-hover-boundary.ng-star-inserted:style(max-width: 90% !important)
+
+! Perplexity AI wide view
+www.perplexity.ai##:root:style(--thread-content-width: 90% !important)
 
 ||facebook.com^$empty,important
 ||pusher.com^$empty,important
