@@ -8,6 +8,8 @@ temu.com##div[class^="wrap-"]:has(div[aria-label="Free shippingIncredible"])
 temu.com##div[class^="bannerWrap-"]:has-text(Why choose Temu?)
 temu.com##div:has(> div:has(> div:has(> div:has(> div[role="button"][aria-label*="Free shipping"]))))
 temu.com##div[class^="wrap-"]:has(svg[class^="icon-"] > g[stroke="#000000"])
+temu.com##div[id^="FloatSupport"]
+temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] div[aria-label="close"]')
 temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] button[aria-label="close download module"]')
 
 ! Gemini AI wide view
