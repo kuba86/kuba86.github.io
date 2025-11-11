@@ -3,9 +3,6 @@ moje.innogy.pl###webchat
 www.certum.pl###cc-banner-wrap
 
 ! Temu anoying mobile view cleanup
-temu.com###bg-simple-portal-container
-temu.com##svg[tabindex="0"][role="button"][aria-label="Cart"]:upward(5)
-temu.com##div[id^="FloatSupport"][class^="supportWrapper-"]
 
 ! Gemini AI wide view
 gemini.google.com##user-query.ng-star-inserted:style(max-width: 90% !important)
