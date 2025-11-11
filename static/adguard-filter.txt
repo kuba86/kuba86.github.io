@@ -4,6 +4,8 @@ www.certum.pl###cc-banner-wrap
 temu.com###bg-simple-portal-container
 temu.com##svg[tabindex="0"][role="button"][aria-label="Cart"]:upward(5)
 temu.com##div[id^="FloatSupport"][class^="supportWrapper-"]
+#$#user-query.ng-star-inserted { max-width: 1700px !important; }
+#$#div.conversation-container.message-actions-hover-boundary.ng-star-inserted { max-width: 1700px !important; }
 ||facebook.com^$empty,important
 ||pusher.com^$empty,important
 ||connect.islay.tech^$empty,important
