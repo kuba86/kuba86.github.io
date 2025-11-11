@@ -2,7 +2,7 @@ allaboutscala.com#$#div .fl-col {width: 100% !important;}
 moje.innogy.pl###webchat
 www.certum.pl###cc-banner-wrap
 
-! Temu anoying mobile view cleanup
+! Temu annoying mobile view cleanup
 
 ! Gemini AI wide view
 gemini.google.com##user-query.ng-star-inserted:style(max-width: 90% !important)
