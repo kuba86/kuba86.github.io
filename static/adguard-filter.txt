@@ -1,11 +1,17 @@
 allaboutscala.com#$#div .fl-col {width: 100% !important;}
 moje.innogy.pl###webchat
 www.certum.pl###cc-banner-wrap
+
+! Temu anoying mobile view cleanup
 temu.com###bg-simple-portal-container
 temu.com##svg[tabindex="0"][role="button"][aria-label="Cart"]:upward(5)
 temu.com##div[id^="FloatSupport"][class^="supportWrapper-"]
-gemini.google.com#$#user-query.ng-star-inserted { max-width: 1700px !important; }
-gemini.google.com#$#div.conversation-container.message-actions-hover-boundary.ng-star-inserted { max-width: 1700px !important; }
+
+! Gemini AI wide view
+gemini.google.com##user-query.ng-star-inserted:style(max-width: 100% !important)
+gemini.google.com##div.input-area-container.ng-trigger.ng-trigger-inputAreaAnimation.ng-star-inserted:style(max-width: 100% !important)
+gemini.google.com##div.conversation-container.message-actions-hover-boundary.ng-star-inserted:style(max-width: 100% !important)
+
 ||facebook.com^$empty,important
 ||pusher.com^$empty,important
 ||connect.islay.tech^$empty,important
