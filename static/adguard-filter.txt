@@ -15,13 +15,20 @@ gemini.google.com##div.conversation-container.message-actions-hover-boundary.ng-
 ! Perplexity AI wide view
 www.perplexity.ai##:root:style(--thread-content-width: 90% !important)
 
+! Grok AI wide view
+grok.com##div.breakout:style(--content-max-width: 90vw !important;)
+grok.com##.max-w-breakout:style(max-width: 90vw !important;)
+grok.com##.items-end:style(align-items: unset !important;)
+
 ||facebook.com^$empty,important
 ||pusher.com^$empty,important
 ||connect.islay.tech^$empty,important
 ||msn.com^$empty,important
 ||disqus.com^$empty,important
 ||bing.com^$empty,important
+
 @@||talk.brave.com^
+
 1.1.1.1$network
 1.0.0.1$network
 8.8.8.8$network
