@@ -14,6 +14,10 @@ temu.com##div[id^="FloatSupport"]
 temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] button[aria-label="close download module"]', '', '1500')
 temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] div[aria-label="close"]', '', '1500')
 
+! Temu Desktop
+temu.com##section:has(a[aria-label="Black Friday Deals"])
+temu.com##div[role="region"]:has(div:contains(Get the Temu App))
+
 ! Gemini AI wide view
 gemini.google.com##user-query.ng-star-inserted:style(max-width: 90% !important)
 gemini.google.com##div.input-area-container.ng-trigger.ng-trigger-inputAreaAnimation.ng-star-inserted:style(max-width: 90% !important)
