@@ -11,8 +11,8 @@ temu.com##div[id="C2980BE8EBC356BF"]
 temu.com##div[class^="wrap-"]:has(svg[class^="icon-"] > g[stroke="#000000"])
 temu.com##div[id^="FloatSupport"]
 ! remove the download add bar
-temu.com#%#//scriptlet('trusted-click-element', 'button[aria-label="close download module"]', '', '1000')
-temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] div[aria-label="close"]', '', '1000')
+temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] button[aria-label="close download module"]', '', '1500')
+temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] div[aria-label="close"]', '', '1500')
 
 ! Gemini AI wide view
 gemini.google.com##user-query.ng-star-inserted:style(max-width: 90% !important)
