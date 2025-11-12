@@ -40,6 +40,15 @@ grok.com##.items-end:style(align-items: unset !important;)
 ! Claude AI wide view
 claude.ai#$#.max-w-3xl { max-width: 90% !important; }
 
+||sonelli.com^$important,app=com.sonelli.juicessh
+||crashlytics.com^$important,app=com.sonelli.juicessh
+||gravatar.com^
+||192.168.8.1/cgi-bin/$app=com.xiaomi.smarthome
+@@||bik.pl^
+||w-x.co^
+@@||luna.amazon.pl^$document
+@@||chat.z.ai^$app=com.brave.browser_nightly
+
 ||facebook.com^$empty,important
 ||pusher.com^$empty,important
 ||connect.islay.tech^$empty,important
