@@ -31,6 +31,9 @@ grok.com##div.breakout:style(--content-max-width: 90vw !important;)
 grok.com##.max-w-breakout:style(max-width: 90vw !important;)
 grok.com##.items-end:style(align-items: unset !important;)
 
+! Claude AI wide view
+claude.ai#$#.max-w-3xl { max-width: 90% !important; }
+
 ||facebook.com^$empty,important
 ||pusher.com^$empty,important
 ||connect.islay.tech^$empty,important
