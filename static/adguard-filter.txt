@@ -4,11 +4,13 @@ www.certum.pl###cc-banner-wrap
 
 ! Temu annoying mobile view cleanup
 temu.com##div[class^="promotionModuleContainer-"]
-temu.com##div[class^="wrap-"]:has(div[aria-label="Free shippingIncredible"])
 temu.com##div[class^="bannerWrap-"]:has-text(Why choose Temu?)
-temu.com##div:has(> div:has(> div:has(> div:has(> div[role="button"][aria-label*="Free shipping"]))))
+! Floating icons
+temu.com##div[class^="wrap-"]:has(div[aria-label="Free shippingIncredible"])
+temu.com##div[id="C2980BE8EBC356BF"]
 temu.com##div[class^="wrap-"]:has(svg[class^="icon-"] > g[stroke="#000000"])
 temu.com##div[id^="FloatSupport"]
+! remove the download add bar
 temu.com#%#//scriptlet('trusted-click-element', 'button[aria-label="close download module"]', '', '1000')
 temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] div[aria-label="close"]', '', '1000')
 
