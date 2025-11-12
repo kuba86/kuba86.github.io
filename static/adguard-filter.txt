@@ -1,3 +1,9 @@
+!
+! Title: kuba86 Personal AdGuard filter
+! Description: kuba86 Personal AdGuard filter
+! Homepage: https://kuba86.com/
+!
+
 allaboutscala.com#$#div .fl-col {width: 100% !important;}
 moje.innogy.pl###webchat
 www.certum.pl###cc-banner-wrap

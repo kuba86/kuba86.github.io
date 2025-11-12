@@ -1,3 +1,9 @@
+!
+! Title: kuba86 Personal DNS AdGuard filter
+! Description: kuba86 Personal DNS AdGuard filter
+! Homepage: https://kuba86.com/
+!
+
 @@||pl-play.adtonos.com^
 /.ru$/
 /.cn$/
