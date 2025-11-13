@@ -8,7 +8,8 @@ allaboutscala.com#$#div .fl-col {width: 100% !important;}
 moje.innogy.pl###webchat
 www.certum.pl###cc-banner-wrap
 
-! Temu annoying mobile view cleanup
+! Temu
+! Mobile
 temu.com##div[class^="promotionModuleContainer-"]
 temu.com##div[class^="bannerWrap-"]:has-text(Why choose Temu?)
 ! Floating icons
@@ -23,8 +24,7 @@ temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-downloa
 temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] div[aria-label="close"]', '', '1500')
 temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] div[aria-label="close"]', '', '3000')
 temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] div[aria-label="close"]', '', '5000')
-
-! Temu Desktop
+! Desktop
 temu.com##section:has(a[aria-label="Black Friday Deals"])
 temu.com##div[role="region"]:has(div:contains(Get the Temu App))
 
@@ -44,25 +44,29 @@ grok.com##.items-end:style(align-items: unset !important;)
 ! Claude AI wide view
 claude.ai#$#.max-w-3xl { max-width: 90% !important; }
 
-||sonelli.com^$important,app=com.sonelli.juicessh
-||crashlytics.com^$important,app=com.sonelli.juicessh
-||gravatar.com^
-||192.168.8.1/cgi-bin/$app=com.xiaomi.smarthome
-@@||bik.pl^
-||w-x.co^
-@@||luna.amazon.pl^$document
-@@||chat.z.ai^$app=com.brave.browser_nightly
-
+! Block sites
 ||facebook.com^$empty,important
 ||pusher.com^$empty,important
 ||connect.islay.tech^$empty,important
 ||msn.com^$empty,important
 ||disqus.com^$empty,important
 ||bing.com^$empty,important
+||w-x.co^$empty,important
+||gravatar.com^$empty,important
 
-@@||talk.brave.com^
+! App specific blocks
+||sonelli.com^$important,app=com.sonelli.juicessh
+||crashlytics.com^$important,app=com.sonelli.juicessh
+||192.168.8.1/cgi-bin/$app=com.xiaomi.smarthome
 
+! Block IPs
 1.1.1.1$network
 1.0.0.1$network
 8.8.8.8$network
 8.8.4.4$network
+
+! Unblock sites
+@@||talk.brave.com^
+@@||bik.pl^
+@@||luna.amazon.pl^$document
+@@||chat.z.ai^$app=com.brave.browser_nightly
