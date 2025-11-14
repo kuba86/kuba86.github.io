@@ -17,13 +17,9 @@ temu.com##div[class^="wrap-"]:has(div[aria-label="Free shippingIncredible"])
 temu.com##div[id="C2980BE8EBC356BF"]
 temu.com##div[class^="wrap-"]:has(svg[class^="icon-"] > g[stroke="#000000"])
 temu.com##div[id^="FloatSupport"]
-! Remove the download add bar, try to close it after 1.5s, 3s and 5s.
-temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] button[aria-label="close download module"]', '', '1500')
+! Remove the download add bar, try to close it after 3s.
 temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] button[aria-label="close download module"]', '', '3000')
-temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] button[aria-label="close download module"]', '', '5000')
-temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] div[aria-label="close"]', '', '1500')
 temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] div[aria-label="close"]', '', '3000')
-temu.com#%#//scriptlet('trusted-click-element', 'div[js-selector="mobile-download-ui"] div[aria-label="close"]', '', '5000')
 ! Desktop
 temu.com##section:has(a[aria-label="Black Friday Deals"])
 temu.com##div[role="region"]:has(div:contains(Get the Temu App))
