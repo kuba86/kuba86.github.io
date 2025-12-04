@@ -28,11 +28,11 @@ temu.com##div[role="region"]:has(div:contains(Get the Temu App))
 ! Main contenet - widen the view
 www.google.com##.mZJni, .yHZdDd, .wp3sz, .wQN2Jd, .hh3ttd:style(max-width: 1600px !important; width: 1600px !important;)
 ! Sidebar - Move down by changing top margin (-40px)
-www.google.com##.ofHStc:style(margin-top: -40px !important;)
+www.google.com#$#.ofHStc { margin-top: -40px !important; }
 ! Inner Sidebar container - Move 650px to the right
-www.google.com##.jKhXsc.notranslate:style(transform: translateX(650px) !important;)
+www.google.com#$#.jKhXsc.notranslate { transform: translateX(650px) !important; }
 ! Align grid content to the left (modifies grid columns)
-www.google.com##.vve6Ce:style(grid-template-columns: minmax(280px, 0fr) repeat(20, 36px) minmax(0, 1fr) !important;)
+www.google.com#$#.vve6Ce { grid-template-columns: minmax(280px, 0fr) repeat(20, 36px) minmax(0, 1fr) !important; }
 
 ! Gemini AI wide view
 gemini.google.com##user-query.ng-star-inserted:style(max-width: 90% !important)
