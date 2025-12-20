@@ -8,6 +8,11 @@ pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 pagination.pagerSize = 5000
 
+[deployment]
+  [[deployment.targets]]
+    name = "production"
+    URL = "s3://kuba86.com?endpoint=https://s3.garage.kuba86.com&s3ForcePathStyle=true&region=us-east-1"
+
 [params]
   author = "kuba86"
   info = "🌈 Scala Spark Engineer 🎉 Functional Programming 🎉"
