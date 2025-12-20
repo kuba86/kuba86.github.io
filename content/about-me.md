@@ -83,7 +83,7 @@ In my professional life I am proud and thankful for:
 
 ### For recruiters:
 
-{{< iframe url="https://cdn.forms-content.sg-form.com/f7f38983-9be1-11ec-8e4b-b6f73875699f" >}}
+{{< iframe url="https://cdn.forms-content.sg-form.com/f7f38983-9be1-11ec-8e4b-b6f73875699f" width="600" height="650" >}}
 
 👉 Before you contact me ✍ make sure you read the above information 🚧. You can find there what I do now and where I see
 myself in the future.

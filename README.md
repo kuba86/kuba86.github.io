@@ -1,7 +1,8 @@
 # kuba86.github.io
 
-Preview: `hugo server --buildDrafts`
-`hugo --buildDrafts --buildFuture --minify --gc --disableFastRender`
+Preview: `hugo server --buildDrafts --disableFastRender`
+
+Build: `hugo --buildDrafts --buildFuture --minify --gc`
 
 OpenGraph image generator: https://banners.beyondco.de/
 

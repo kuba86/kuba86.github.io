@@ -60,15 +60,15 @@ First things first. In order to install Arch Linux we need to download the ISO f
 
 Go to [Arch Linux website](https://www.archlinux.org/) and at the top right corner you will see download page link.
 
-![screenshot showing link to Arch Linux download page](https://dev-to-uploads.s3.amazonaws.com/i/m2tr33vj7ycjq35yu9zq.png)
+![screenshot showing link to Arch Linux download page](/img/posts/m2tr33vj7ycjq35yu9zq.png)
 
 Once on the page you can choose from variety of options such as BitTorrent or HTTP. Once you scroll to HTTP you will see a global section, and below it, a list of countries with list of mirrors.
 
-![Arch Linux download page with HTTP direct downloads mirrors](https://dev-to-uploads.s3.amazonaws.com/i/5yre7979ymn8hu4pd9uj.png)
+![Arch Linux download page with HTTP direct downloads mirrors](/img/posts/5yre7979ymn8hu4pd9uj.png)
 
 Choose the closest one to your location and click on one of the mirrors. Poland is the closest one to me. So I have choosen icm.edu.pl
 
-![Arch Linux Poland mirror icm.edu.pl](https://dev-to-uploads.s3.amazonaws.com/i/23k3111vo60b0g8b42o0.png)
+![Arch Linux Poland mirror icm.edu.pl](/img/posts/23k3111vo60b0g8b42o0.png)
 
 You should download the current ISO file archlinux-*-x86_64.iso. These files are generated at the beginning of each month. Once the iso file is downloaded, we want to create a bootable media. I recommend [balenaEtcher](https://www.balena.io/etcher/). You can follow their guide how to use it to create bootalbe media.
 
@@ -77,18 +77,18 @@ Now that we have bootable media ready, use it to boot the Arch Linux Live OS. It
 
 If everything went correctly you should see something similar to this:
 
-![First screen after successfully booting Arch Linux Live OS](https://dev-to-uploads.s3.amazonaws.com/i/4hsbou9ideftgbfb0isy.png)
+![First screen after successfully booting Arch Linux Live OS](/img/posts/4hsbou9ideftgbfb0isy.png)
 
 ## 3. Arch Linux Live OS setup
 First, we want to check if the internet connection is working. If you have wired connection run `ping google.com`. To stop pinging use CTRL+C. if you are connected to internet, you should see something similar to this:
 
-![results of command ping google.com after terminating with CTRL+C](https://dev-to-uploads.s3.amazonaws.com/i/xpdyizwo40wloclrfw1p.png)
+![results of command ping google.com after terminating with CTRL+C](/img/posts/xpdyizwo40wloclrfw1p.png)
 
 If you, on the other hand, need to use WIFI to connect to the internet use `iwctl` tool. you can run `iwctl --help` to get more information how to use it. In short, to find out your device name run `iwctl device list` and once you are ready to connect use `iwctl station [device name] connect [network name] [security]`. If everything was done correctly, you should be able to `ping google.com` and see similar output as in the above screenshot.
 
 Before we continue to set up the storage, we want to sync the clock using [NTP](https://en.wikipedia.org/wiki/Network_Time_Protocol). To do this, we will use `timedatectl` tool. As always, the first thing you want to do is get familiar with what the tool can do. To do so, run `timedatectl --help`.
 
-![result of running timedatectl –help commnad](https://dev-to-uploads.s3.amazonaws.com/i/s3l5964qiy1p22621vqx.png)
+![result of running timedatectl –help commnad](/img/posts/s3l5964qiy1p22621vqx.png)
 
 To set NTP we want to run `timedatectl set-ntp true`. To verify that we did it correctly, run `timedatectl status`. You will see `NTP service: active`. Now, we are ready to prepare our storage for installing Arch Linux.
 
@@ -99,37 +99,37 @@ In my Intel NUC I have 240GB SSD with Ubuntu installed. Before we install Arch L
 
 First, lets list available drives on the machine. To do that, we will use `fdisk` tool. As always, you want to run `fdisk --help` to see what you can do with a given tool. You should see:
 
-![fdisk –help result](https://dev-to-uploads.s3.amazonaws.com/i/v2sictxn390oc0m67o8x.png)
+![fdisk –help result](/img/posts/v2sictxn390oc0m67o8x.png)
 
 Since we want to find out what drives are available to us, let’s run `fdisk --list`
 
-![fdisk –list result](https://dev-to-uploads.s3.amazonaws.com/i/sc7zz66g5jyzlmvfid4t.png)
+![fdisk –list result](/img/posts/sc7zz66g5jyzlmvfid4t.png)
 
 In my case, the results show three drives. `/dev/sda` – 240GB SSD, `/dev/sdb` – bootable USB with Arch Linux Live OS, `/dev/loop0` – you can read more [here](https://askubuntu.com/questions/906581/what-is-dev-loopx) about loop devices. To understand naming convention of Linux devices I personally recommend [this article](https://tldp.org/HOWTO/Partition-Mass-Storage-Definitions-Naming-HOWTO/x99.html).
 
 When you take a look at results of `fdisk --help`, the usage section shows command to “change partition table” this is exactly what we want! Because we are interested in `/dev/sda` drive we will run `fdisk /dev/sda`. The result should look like this:
 
-![entering into change mode with fdisk for /dev/sda device](https://dev-to-uploads.s3.amazonaws.com/i/hl35smokcfwudd94jy2n.png)
+![entering into change mode with fdisk for /dev/sda device](/img/posts/hl35smokcfwudd94jy2n.png)
 
 I hope this will come as no surprise, and something you should do every time… Let’s check help by hitting `m` on the keyboard 😊
 
-![result of m command in fdisk](https://dev-to-uploads.s3.amazonaws.com/i/wn5jggcjnmw5m3cdh996.png)
+![result of m command in fdisk](/img/posts/wn5jggcjnmw5m3cdh996.png)
 
 First, we will check information about partitions using `i` command:
 
-![checking info for the disk](https://dev-to-uploads.s3.amazonaws.com/i/zpfthutj6zu5lbqqvwcf.png)
+![checking info for the disk](/img/posts/zpfthutj6zu5lbqqvwcf.png)
 
 Since we want to start fresh, we will delete both partitions using `d` command:
 
-![result of command d that deletes partition](https://dev-to-uploads.s3.amazonaws.com/i/qpixja0btb97d97fa28w.png)
+![result of command d that deletes partition](/img/posts/qpixja0btb97d97fa28w.png)
 
 In the first step we deleted partition 1, in second step there was only one partition left so we did not have to specify it. Command `w` will save the changes so lets do it!
 
-![save changes to disk using w command](https://dev-to-uploads.s3.amazonaws.com/i/pwsucx3phj5jd0jb029l.png)
+![save changes to disk using w command](/img/posts/pwsucx3phj5jd0jb029l.png)
 
 To verify everything went correctly lets run `fdisk --list`
 
-![verify changes with fdisk --list](https://dev-to-uploads.s3.amazonaws.com/i/iszf4ng5dnxzgbksc7g1.png)
+![verify changes with fdisk --list](/img/posts/iszf4ng5dnxzgbksc7g1.png)
 
 Grerat, the `/dev/sda` drive has no partitions. We can now setup three new one’s.
 
@@ -149,7 +149,7 @@ Let’s begin!
 1. `t` – change partition type.
 1. `1` – EFI system.
 
-![commands needed to create EFI partition using fdisk tool](https://dev-to-uploads.s3.amazonaws.com/i/1do27wshtavst8u6waeo.png)
+![commands needed to create EFI partition using fdisk tool](/img/posts/1do27wshtavst8u6waeo.png)
 
 Now it’s time to create a second partition for SWAP.
 
@@ -161,7 +161,7 @@ Now it’s time to create a second partition for SWAP.
 1. `t` – change partition type.
 1. `19` – Linux swap.
 
-![commands needed to create SWAP partition using fdisk tool](https://dev-to-uploads.s3.amazonaws.com/i/wz868yaagtzezl3enw9s.png)
+![commands needed to create SWAP partition using fdisk tool](/img/posts/wz868yaagtzezl3enw9s.png)
 
 Last, but not least, let’s create third partition for ROOT. We want this partition to be the largest because all our data will go here.
 
@@ -173,11 +173,11 @@ Last, but not least, let’s create third partition for ROOT. We want this parti
 1. `t` – change partition type.
 1. `24` – Linux root (x86-64).
 
-![commands needed to create ROOT partition using fdisk tool](https://dev-to-uploads.s3.amazonaws.com/i/q9i89tqg1rm3wvb2u8p0.png)
+![commands needed to create ROOT partition using fdisk tool](/img/posts/q9i89tqg1rm3wvb2u8p0.png)
 
 All the changes so far have been saved to memory only, so if you want to change something you can use `q` command that will **quit without saving changes**. If on the other hand everything looks good, we can use `w` command which will **write table to disk and exit**. to verify everything went as planned let’s once again use `fdisk --list` command.
 
-![verify proper partitions created with fdisk tool](https://dev-to-uploads.s3.amazonaws.com/i/huxec9f6dft19cl3be3n.png)
+![verify proper partitions created with fdisk tool](/img/posts/huxec9f6dft19cl3be3n.png)
 
 Awesome! now we have three new partition `/dev/sda1` – EFI, `/dev/sda2` – SWAP and `/dev/sda3` – ROOT. Next step is to format them with appropriate file system type.
 
@@ -192,11 +192,11 @@ and commands for formatting our three partitions:
 `mkswap /dev/sda2`
 `mkfs.ext4 /dev/sda3`
 
-![format partitions with vfat swap and ext4 file system](https://dev-to-uploads.s3.amazonaws.com/i/9k2wp263x1iw6gbwi8gn.png)
+![format partitions with vfat swap and ext4 file system](/img/posts/9k2wp263x1iw6gbwi8gn.png)
 
 To check we done everything correctly let’s run `fdisk --list`
 
-![verify with fdisk --list](https://dev-to-uploads.s3.amazonaws.com/i/z4hrobl7e6qhxmucpa62.png)
+![verify with fdisk --list](/img/posts/z4hrobl7e6qhxmucpa62.png)
 
 Now that we have prepared our storage we can begin installing Arch Linux.
 
@@ -209,7 +209,7 @@ Before we install packages to our newly formatted partitions we need to mount th
 
 Once the partitions are mounted, the installation process is quite simple and we will use pacstrap to install all necessary packages. First, lets run `pacstrap --help`
 
-![result of pacstrap --help](https://dev-to-uploads.s3.amazonaws.com/i/tk59aoevhe8zwwuan3xv.png)
+![result of pacstrap --help](/img/posts/tk59aoevhe8zwwuan3xv.png)
 
 Besides “base” group we will add linux and linux-firmware. When we use pacstrap we need to provide path where to install the packages. The final command should be:
 
@@ -217,7 +217,7 @@ Besides “base” group we will add linux and linux-firmware. When we use pacst
 
 This process will take some time and will depend on your CPU, RAM, SSD/HDD and internet connection speed.
 
-![result of using pacstrap tool](https://dev-to-uploads.s3.amazonaws.com/i/wkhvkg6hqkyz99kft9fo.png)
+![result of using pacstrap tool](/img/posts/wkhvkg6hqkyz99kft9fo.png)
 
 Few things should get your attention. Warnings regarding **possible** firmware missing, locale settings and stats of the executed command.
 
@@ -229,24 +229,24 @@ To generate fstab file run `genfstab -U /mnt >> /mnt/etc/fstab`. To read more I 
 ## 7. Using chroot to “login” into new system
 Before we actually boot into our system, we can use arch-chroot. To see basic info about this tool execute `arch-chroot -h`
 
-![result of arch-chroot -h](https://dev-to-uploads.s3.amazonaws.com/i/vmh12k0o300n0m5ce0s5.png)
+![result of arch-chroot -h](/img/posts/vmh12k0o300n0m5ce0s5.png)
 
 In our case we can execute `arch-chroot /mnt` with default options. It will appear that you are no longer in the Live OS environment but in our newly installed system. Using arch-chroot will use Live OS network configuration so we don’t need to do much configuration to begin.
 
 ## 8. Installing additional packages
 In CLI, I prefer to work in fish shell and use nano editor. Because we have left Live OS we can install fish and nano editor. The installation will persist. In Arch Linux, we will use pacman to manage applications. You can think of `pacman` as `apt` in Debian or `yum` in CentOS. By now, you know what will be the first thing we will execute: `pacman --help`
 
-![result of pacman --help](https://dev-to-uploads.s3.amazonaws.com/i/gixj1pbbcwo3gukth3yu.png)
+![result of pacman --help](/img/posts/gixj1pbbcwo3gukth3yu.png)
 
 at first we want to sync so let’s check `pacman -S --help`
 
-![result of pacman -S --help](https://dev-to-uploads.s3.amazonaws.com/i/kp0xj9ocbztv0ixytjse.png)
+![result of pacman -S --help](/img/posts/kp0xj9ocbztv0ixytjse.png)
 
 First thing, we want to do is refresh and upgrade installed packages. `pacman -Syu`
 
 Since we just install all the packages everything should be up to date. To install fish, nano and git we need to specify package names at the end of the command, so now lets execute `pacman -Syu fish git nano`
 
-![result of pacman -Syu fish git nano](https://dev-to-uploads.s3.amazonaws.com/i/ugxupubd6or81uqypgkz.png)
+![result of pacman -Syu fish git nano](/img/posts/ugxupubd6or81uqypgkz.png)
 
 There will be additional packages installed. You will be asked to confirm the installation of these packages with Y.
 
@@ -298,7 +298,7 @@ include "/usr/share/nano-syntax-highlighting/*.nanorc"
 
 Once you save and exit nano, open the same file again (arrow up on your keyboard) and you will see that the file has syntax highlighting. great!
 
-![Nano Editor with syntax highlighting](https://dev-to-uploads.s3.amazonaws.com/i/pe7ttf2vpcetuols4w6z.png)
+![Nano Editor with syntax highlighting](/img/posts/pe7ttf2vpcetuols4w6z.png)
 
 Now that we changed some configuration, we can commit changes if you have chosen to use git.
 ```
@@ -326,7 +326,7 @@ Now that we have grub tools and microcode packages installed we can create grub.
 
 If everything was done correctly, you should see something similar to this:
 
-![result of grub-mkconfig -o /boot/grub/grub.cfg](https://dev-to-uploads.s3.amazonaws.com/i/8ihw2bhrwlt59vioysnr.png)
+![result of grub-mkconfig -o /boot/grub/grub.cfg](/img/posts/8ihw2bhrwlt59vioysnr.png)
 
 If you installed microcode, make sure it was found and added:
 `Found initrd image: /boot/intel-ucode.img`
@@ -598,7 +598,7 @@ Once we added the keys, lets find out IP address of our machine in our local net
 `ssh kuba@192.168.1.59 -p 55501`
 `ssh [user name]@[IP address] -p [port number]`
 
-![fist login using SSH](https://dev-to-uploads.s3.amazonaws.com/i/v0hcsmlrbl9ake2fgalt.png)
+![fist login using SSH](/img/posts/v0hcsmlrbl9ake2fgalt.png)
 
 ## 23. Conclusions
 Setting up Arch Linux is not easy, and requires a lot of decision making comparing to Ubuntu or other distributions. In my case, I prefer Arch Linux because I have learned so much just by installing it. I know where to look for if my DNS or network is not working, or what systemd is and how to use it. I hope that by following this tutorial you have learned more about Linux, Arch, git, SSH and where to look if you need help with a tool or a command.

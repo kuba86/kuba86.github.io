@@ -1,5 +1,5 @@
 baseURL = "https://kuba86.com/"
-title = "kuba86 · Scala Engineer · Blog"
+title = "kuba86 · Scala Spark Engineer · Blog"
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
@@ -10,17 +10,18 @@ pagination.pagerSize = 5000
 
 [params]
   author = "kuba86"
-  info = "🌈 Scala Engineer 🎉 Functional Programming"
+  info = "🌈 Scala Spark Engineer 🎉 Functional Programming 🎉"
   images = ["/img/kuba86.png"]
-  description = "kuba86's blog, tutorials and how to's about Scala and the journey as a Data Engineer"
-  keywords = "scala,blog,engineer,data,kuba86,developer,software"
+  description = "kuba86's blog, tutorials and how to's about Scala, Spark and the journey as a Data Engineer"
+  keywords = "scala,spark,blog,engineer,data,kuba86,developer,software"
   avatarurl = "img/profile.jpg"
-  favicon_16 = "img/favicon_16.png"
-  favicon_32 = "img/favicon_32.png"
-  touchicon = "img/touchicon.png"
+  favicon_16 = "img/kuba86-com-logo-dark-16.png"
+  favicon_32 = "img/kuba86-com-logo-dark-32.png"
+  touchicon = "img/kuba86-com-logo-dark-256.png"
   since = 2021
   enableTwemoji = false
   colorScheme = "dark"
+customCSS = ["css/custom.css"]
 
 [taxonomies]
   category = "categories"
@@ -45,7 +46,7 @@ pagination.pagerSize = 5000
   url = "https://kuba86.github.io/index.xml"
 
 [params.counterdev]
-  user = "kuba86"
+    id = "0a623b7e-4cc9-4d66-bc1a-86b2a4b46be7"
 
 [params.cloudflare]
   token = "ab821c2c2ce94446ac9a6f1e4052f9d4"
