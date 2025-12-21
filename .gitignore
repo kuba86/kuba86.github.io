@@ -2,3 +2,4 @@
 /resources/
 *.lock
 /.idea
+/.run
