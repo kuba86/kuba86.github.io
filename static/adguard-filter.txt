@@ -72,7 +72,9 @@ claude.ai#$#.max-w-3xl { max-width: 90% !important; }
 8.8.4.4$network
 
 ! Unblock sites
-@@||talk.brave.com^
-@@||bik.pl^
+@@||pad.kuba86.com^
+@@||pad-sandbox.kuba86.com^
+@@||talk.brave.com^$document
+@@||bik.pl^$document
 @@||luna.amazon.pl^$document
 @@||chat.z.ai^$app=com.brave.browser_nightly
