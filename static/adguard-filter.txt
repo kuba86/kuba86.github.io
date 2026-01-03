@@ -40,15 +40,15 @@ gemini.google.com##div.input-area-container.ng-trigger.ng-trigger-inputAreaAnima
 gemini.google.com##div.conversation-container.message-actions-hover-boundary.ng-star-inserted:style(max-width: 80vw !important)
 
 ! Perplexity AI wide view
-www.perplexity.ai##:root:style(--thread-content-width: 90% !important)
+www.perplexity.ai##:root:style(--thread-content-width: 80vw !important)
 
 ! Grok AI wide view
-grok.com##div.breakout:style(--content-max-width: 90vw !important;)
-grok.com##.max-w-breakout:style(max-width: 90vw !important;)
+grok.com##div.breakout:style(--content-max-width: 80vw !important;)
+grok.com##.max-w-breakout:style(max-width: 80vw !important;)
 grok.com##.items-end:style(align-items: unset !important;)
 
 ! Claude AI wide view
-claude.ai#$#.max-w-3xl { max-width: 90% !important; }
+claude.ai#$#.max-w-3xl { max-width: 80vw !important; }
 
 ! Block sites
 ||facebook.com^$empty,important
