@@ -2,11 +2,11 @@
 draft = false
 authors = ["kuba86"]
 date = "2021-08-22"
-lastmod = "2021-10-27"
+lastmod = "2026-01-21"
 aliases = ["about-us", "about", "contact"]
 images = ["/img/about-me.png"]
 title = "About me"
-description = "Hi, my name is Jakub Blaszczyk (he/him)"
+description = "Info about Jakub Blaszczyk"
 +++
 
 ## Who am I? · 👨‍💻 🌈
@@ -15,11 +15,11 @@ Hi, my name is Jakub Błaszczyk (he/him), based in Warsaw, Poland.
 
 ## What I do? · ☕ 👨‍💻
 
-Professionally, I am a Software Engineer specializing in Scala and Spark. I adhere to the engineering mindset of designing, building, and testing systems to meet functional requirements within practical constraints. I primarily work with Scala and Spark, valuing Scala for its strong static typing and support for both functional and object-oriented programming.
+Professionally, I am a Data Engineer specializing in Scala and Spark. I adhere to the engineering mindset of designing, building, and testing systems to meet functional requirements within practical constraints. I primarily work with Scala and Spark, valuing Scala for its strong static typing and support for both functional and object-oriented programming.
 
 ## What would I like to do? · 🔮 📝 🌴
 
-I aim to work with Scala and Functional Programming. Beyond coding, I enjoy mentoring, writing documentation, and earning certifications, such as my **Microsoft Azure Solution Architect Expert** and **Data Engineer Associate** exams. Equally important is the team culture. I prioritize a diverse, inclusive, and supportive environment where honesty and an "ok to fail" attitude prevail. I would choose a great team over a specific tech stack any day.
+I aim to work with Scala and Functional Programming. Beyond coding, I enjoy mentoring, writing documentation, and earning certifications, such as my Microsoft Azure Solution Architect Expert and Data Engineer Associate exams. Equally important is the team culture. I prioritize a diverse, inclusive, and supportive environment where honesty and an "ok to fail" attitude prevail. I would choose a great team over a specific tech stack any day.
 
 ## How did I get where I am now? · ⚡ 🚀 🚊
 
@@ -32,7 +32,7 @@ In my professional life I am proud of:
 *   ✅ Mastering functional programming concepts (thanks to Alvin Alexander and Daniel Ciocîrlan).
 *   ✅ Working with supportive managers who helped me grow.
 *   ✅ Volunteering in employee diversity networks at JLL, Credit Suisse, and UBS.
-*   ✅ Earning **Microsoft Azure Solution Architect** and **Data Engineer** certifications.
+*   ✅ Earning Microsoft Azure Solution Architect and Data Engineer certifications.
 *   ✅ The opportunity to learn something new every day.
 
 ## Let’s talk! · 🦜 🙈 🙊 🙉
