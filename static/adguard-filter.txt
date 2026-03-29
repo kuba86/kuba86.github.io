@@ -38,6 +38,7 @@ temu.com##div[role="region"]:has(div:contains(Get the Temu App))
 gemini.google.com##user-query.ng-star-inserted:style(max-width: 80vw !important)
 gemini.google.com##div.input-area-container.ng-trigger.ng-trigger-inputAreaAnimation.ng-star-inserted:style(max-width: 80vw !important)
 gemini.google.com##div.conversation-container.message-actions-hover-boundary.ng-star-inserted:style(max-width: 80vw !important)
+gemini.google.com##div.table-block.new-table-style:style(max-width: 80vw !important)
 
 ! Perplexity AI wide view
 www.perplexity.ai##:root:style(--thread-content-width: 80vw !important)
