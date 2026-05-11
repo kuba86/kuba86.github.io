@@ -94,3 +94,4 @@
 ||aitd.one^
 ||extrahefty.com^
 ||freevpn.one^
+||sonelli.com^
