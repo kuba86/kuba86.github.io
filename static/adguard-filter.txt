@@ -51,6 +51,9 @@ grok.com##.items-end:style(align-items: unset !important;)
 ! Claude AI wide view
 claude.ai#$#.max-w-3xl { max-width: 80vw !important; }
 
+! M365 Copilot wide view
+m365.cloud.microsoft##.f6c99af, .fggyz0a, .fai-CopilotMessage, .fai-CopilotMessage__content:style(max-width: 100% !important;)
+
 ! Block sites
 ||facebook.com^$empty,important
 ||pusher.com^$empty,important
