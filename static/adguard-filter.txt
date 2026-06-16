@@ -54,6 +54,9 @@ claude.ai#$#.max-w-3xl { max-width: 80vw !important; }
 ! M365 Copilot wide view
 m365.cloud.microsoft##.f6c99af, .fggyz0a, .fai-CopilotMessage, .fai-CopilotMessage__content:style(max-width: 100% !important;)
 
+! Mistral AI
+chat.mistral.ai##div.w-full.min-w-0:style(--breakpoint-md: 80vw !important;)
+
 ! Block sites
 ||facebook.com^$empty,important
 ||pusher.com^$empty,important
