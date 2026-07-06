@@ -72,10 +72,13 @@
 ||bytedanceapi.com^
 ||yastatic.net^
 ||devlooped.com^
-!rule||dns.google^
-!rule||dns.cloudflare.com^
-!rule||cloudflare-dns.com^
-!rule||alidns.com^
+! DNS
+||dns.google^
+||dns.cloudflare.com^
+||cloudflare-dns.com^
+||dns.quad9.net^
+||alidns.com^
+! DNS
 ||dac-api-prod.tpv-analytics.com^
 @@||email-link.adtidy.org^
 @@||go.theregister.com^
