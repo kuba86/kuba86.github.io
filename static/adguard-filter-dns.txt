@@ -78,6 +78,8 @@
 ||cloudflare-dns.com^
 ||dns.quad9.net^
 ||alidns.com^
+||impervadns.net^
+||dns.apple.com^
 ! DNS
 ||dac-api-prod.tpv-analytics.com^
 @@||email-link.adtidy.org^
