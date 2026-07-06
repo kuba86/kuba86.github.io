@@ -4,7 +4,6 @@
 ! Homepage: https://kuba86.com/
 !
 
-@@||pl-play.adtonos.com^
 /.ru$/
 /.cn$/
 /gemius./
@@ -72,6 +71,7 @@
 ||bytedanceapi.com^
 ||yastatic.net^
 ||devlooped.com^
+
 ! DNS
 ||dns.google^
 ||dns.cloudflare.com^
@@ -80,11 +80,10 @@
 ||alidns.com^
 ||impervadns.net^
 ||dns.apple.com^
-! DNS
+||herokudns.com^
+||doh.pub^
+
 ||dac-api-prod.tpv-analytics.com^
-@@||email-link.adtidy.org^
-@@||go.theregister.com^
-@@||brave.com^
 ||eu-teams.events.data.microsoft.com^
 ||twitter.co
 ||x.com^
@@ -95,8 +94,30 @@
 ||sentry.io^
 ||librus.pl^
 ||gator.volces.com^
+||telegram.org^
+||t.me^
+||telegram.me^
+||tg.dev^
+||telesco.pe^
+||ipsos.pl^
 ||rayjump.com^
 ||aitd.one^
 ||extrahefty.com^
 ||freevpn.one^
 ||sonelli.com^
+
+! Exceptions
+@@||doodstream.com^
+@@||email-link.adtidy.org^
+@@||go.theregister.com^
+@@||brave.com^
+
+! TVN and player.pl
+@@||redcdn.pl^
+
+! z.ai
+@@||z.ai^
+@@||chatglm.cn^
+@@||bigmodel.cn^
+
+@@||pl-play.adtonos.com^
