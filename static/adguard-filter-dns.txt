@@ -78,7 +78,7 @@
 ||cloudflare-dns.com^
 ||dns.quad9.net^
 ||alidns.com^
-||impervadns.net^
+! ||impervadns.net^ used by portal.wroclaw.sa.gov.pl
 ||dns.apple.com^
 ||herokudns.com^
 ||doh.pub^
