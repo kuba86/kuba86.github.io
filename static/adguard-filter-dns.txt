@@ -21,7 +21,6 @@
 ||fbcdn.net^
 ||messenger.com^
 ||oculus.com^
-||meta.com^
 ||fb.com^
 ||threads.net^
 ||facebook.design^
