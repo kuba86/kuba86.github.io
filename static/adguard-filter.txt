@@ -85,3 +85,4 @@ chat.mistral.ai##div.w-full.min-w-0:style(--breakpoint-md: 95vw !important;)
 @@||bik.pl^$document
 @@||luna.amazon.pl^$document
 @@||chat.z.ai^$app=com.brave.browser_nightly
+@@||gemini.google.com
