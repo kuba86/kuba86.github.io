@@ -51,8 +51,24 @@ grok.com##.items-end:style(align-items: unset !important;)
 ! Claude AI wide view
 claude.ai#$#.max-w-3xl { max-width: 80vw !important; }
 
-! M365 Copilot wide view
-m365.cloud.microsoft##.f6c99af, .fggyz0a, .fai-CopilotMessage, .fai-CopilotMessage__content:style(max-width: 100% !important;)
+! M365 Copilot
+! full-width messages
+m365.cloud.microsoft,copilot.microsoft.com##:is([data-testid="m365-chat-llm-web-ui-chat-message"], [id^="chatMessageContainer"], [data-testid="chatOutput"]):style(width: 100% !important; max-width: none !important;)
+! Remove width limits from content inside messages
+m365.cloud.microsoft,copilot.microsoft.com##:is([data-testid="m365-chat-llm-web-ui-chat-message"], [id^="chatMessageContainer"], [data-testid="chatOutput"]) *:style(max-width: none !important;)
+! Make chat output a normal full-width block
+m365.cloud.microsoft,copilot.microsoft.com##[data-testid="chatOutput"]:style(display: block !important; width: 100% !important; max-width: none !important;)
+! Make direct chat output containers full-width
+m365.cloud.microsoft,copilot.microsoft.com##:is([data-testid="chatOutput"] > div, [data-testid="chatOutput"] article, [data-testid="chatOutput"] section):style(width: 100% !important; max-width: none !important;)
+! Make code blocks full-width
+m365.cloud.microsoft,copilot.microsoft.com##:is(.scriptor-component-code-block, .scriptor-codeblock-virtualized):style(width: 100% !important; max-width: none !important;)
+! Make tables full-width
+m365.cloud.microsoft,copilot.microsoft.com##table:style(width: 100% !important; table-layout: auto !important;)
+! Wrap long table-cell content
+m365.cloud.microsoft,copilot.microsoft.com##:is(table th, table td):style(white-space: normal !important; overflow-wrap: anywhere !important; word-break: break-word !important; max-width: none !important;)
+! Set GPT 5.6 Think deeper
+m365.cloud.microsoft,copilot.microsoft.com##+js(trusted-click-element, '#gptModeSwitcher, [data-test-id="gptSubMenuModelTrigger-OpenAI"]', '', 900)
+m365.cloud.microsoft,copilot.microsoft.com##+js(trusted-click-element, 'div[role="menuitemradio"]:has(svg[data-testid="checkmark-Gpt_5_6_Reasoning"])', '', 1000)
 
 ! Mistral AI
 chat.mistral.ai##div.w-full.min-w-0:style(--breakpoint-md: 95vw !important;)
