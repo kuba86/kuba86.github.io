@@ -35,13 +35,10 @@ temu.com##div[role="region"]:has(div:contains(Get the Temu App))
 ! www.google.com#$#.vve6Ce { grid-template-columns: minmax(280px, 0fr) repeat(20, 36px) minmax(0, 1fr) !important; }
 
 ! Gemini AI wide view
-gemini.google.com#$#user-query.ng-star-inserted { max-width: 80vw !important; }
-gemini.google.com#$#div.input-area-container.ng-trigger.ng-trigger-inputAreaAnimation.ng-star-inserted { max-width: 80vw !important; }
-gemini.google.com#$#div.conversation-container.message-actions-hover-boundary.ng-star-inserted { max-width: 80vw !important; }
-gemini.google.com#$#div.table-block.new-table-style { max-width: 80vw !important; }
+gemini.google.com#$#.enable-extended-and-xl-grid .md-content > :not(#_) { max-width: 80vw !important; }
 
 ! Perplexity AI wide view
-www.perplexity.ai#$#:root { --thread-content-width: 80vw !important; }
+perplexity.ai#$#:root { --thread-content-width: 80vw !important; }
 
 ! Grok AI wide view
 grok.com#$#div.breakout { --content-max-width: 80vw !important; }
