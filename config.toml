@@ -1,7 +1,7 @@
 baseURL = "https://kuba86.com/"
 title = "kuba86 · Scala Spark Engineer · Blog"
 theme = "hugo-coder"
-languagecode = "en"
+locale = "en"
 defaultcontentlanguage = "en"
 pygmentsStyle = "monokai"
 pygmentsCodeFences = true
