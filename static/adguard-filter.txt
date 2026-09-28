@@ -46,7 +46,10 @@ grok.com#$#.max-w-breakout { max-width: 80vw !important; }
 grok.com#$#.items-end { align-items: unset !important; }
 
 ! Claude AI wide view
-claude.ai#$#.max-w-3xl { max-width: 80vw !important; }
+claude.ai#$#[data-testid="transcript-list"], [data-testid="chat-column"] { max-width: 80vw !important; }
+
+! ChatGPT AI wide view
+chatgpt.com#$#[data-thread-user-message-navigation-content="true"] { max-width: 80vw !important; }
 
 ! M365 Copilot
 ! full-width messages
